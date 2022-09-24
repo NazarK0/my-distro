@@ -13,7 +13,7 @@ _Run as ROOT_
 sudo su
 apt update
 apt install git
-cd tmp
+cd /tmp
 git clone https://github.com/Nazark0/my-repo.git
 ./setup.sh
 ```
