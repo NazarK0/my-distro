@@ -14,6 +14,6 @@ sudo su
 apt update
 apt install git
 cd /tmp
-git clone https://github.com/Nazark0/my-repo.git
+git clone https://github.com/Nazark0/my-distro.git
 ./setup.sh
 ```
