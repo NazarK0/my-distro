@@ -1,4 +1,4 @@
-apt install unzip picom bspwm polybar deepin-terminal rofi neofetch sxhkd git lxpolkit lxappearance fonts-material-design-icons-iconfont -y
+apt install unzip picom bspwm polybar deepin-terminal rofi neofetch sxhkd git lxpolkit lxappearance fonts-material-design-icons-iconfont pulseaudio -y
 apt install papirus-icon-theme feh lxappearance fonts-noto-color-emoji fonts-firacode libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 
 # Download Nordic Theme
