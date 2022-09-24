@@ -1,6 +1,7 @@
 git clone https://github.com/romkatv/powerlevel10k.git /tmp/l10k
 cp -r /tmp/l10k/ $ZSH_CUSTOM/themes/
-source $HOME/.zshrc
+cd $HOME
+source .zshrc
 p10k configure
 # git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
