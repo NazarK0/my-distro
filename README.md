@@ -15,5 +15,6 @@ apt update
 apt install git
 cd /tmp
 git clone https://github.com/Nazark0/my-distro.git
+cd my-distro
 ./setup.sh
 ```

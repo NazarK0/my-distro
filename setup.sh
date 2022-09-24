@@ -6,12 +6,12 @@ builddir=$(/tmp)
 mkdir -p $builddir
 
 # Add to Debian backports branch
-echo ./sources.list >> /etc/apt/sources.list
+cat ./sources.list >> /etc/apt/sources.list
 
 # Update packages list
 apt update
 
-apt install sudo unzip picom bspwm polybar deepin-terminal zsh rofi neofetch sxhkd lxpolkit lxappearance fonts-material-design-icons-iconfont pulseaudio -y
+apt install sudo zip unzip picom bspwm polybar deepin-terminal zsh rofi neofetch sxhkd lxpolkit lxappearance fonts-material-design-icons-iconfont pulseaudio -y
 apt install papirus-icon-theme feh lxappearance fonts-noto-color-emoji fonts-firacode libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 
 usermod -aG sudo $username
