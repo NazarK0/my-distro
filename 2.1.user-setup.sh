@@ -3,7 +3,7 @@ source ~/.zshrc
 p10k configure
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-$usrhome/.zshrc >> plugins=(zsh-autosuggestions git)
+$HOME/.zshrc >> plugins=(zsh-autosuggestions git)
 source ~/.zshrc
 
 git clone https://github.com/vinceliuice/Layan-cursors
@@ -15,9 +15,8 @@ echo "Inherits=Layan-cursors" | sudo tee -a /usr/share/icons/default/index.theme
 # Powermenu Unicode problem fix
 cd ../
 git clone https://github.com/adi1090x/rofi.git
-mkdir -p $usrhome/.local/share/fonts
-cp -rf rofi/fonts/* $usrhome/.local/share/fonts/
-
+mkdir -p $HOME/.local/share/fonts
+cp -rf rofi/fonts/* $HOME/.local/share/fonts/
 
 rm -rf $builddir
 
