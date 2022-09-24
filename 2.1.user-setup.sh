@@ -1,11 +1,11 @@
-git clone https://github.com/romkatv/powerlevel10k.git 
+git clone https://github.com/romkatv/powerlevel10k.git .
 cp powerlevel10k/ $ZSH_CUSTOM/themes/
 source $HOME/.zshrc
 p10k configure
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-echo plugins=(zsh-autosuggestions git) >> $HOME/.zshrc
-source $HOME/.zshrc
+# git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+# echo plugins=(zsh-autosuggestions git) >> $HOME/.zshrc
+# source $HOME/.zshrc
 
 git clone https://github.com/vinceliuice/Layan-cursors
 cd Layan-cursors
