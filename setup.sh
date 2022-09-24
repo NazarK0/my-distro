@@ -1,5 +1,5 @@
 apt install unzip picom bspwm polybar deepin-terminal rofi neofetch sxhkd git lxpolkit lxappearance fonts-material-design-icons-iconfont -y
-apt install feh lxappearance fonts-noto-color-emoji fonts-firacode libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
+apt install papirus-icon-theme feh lxappearance fonts-noto-color-emoji fonts-firacode libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 
 # Download Nordic Theme
 cd /usr/share/themes/
@@ -17,7 +17,9 @@ mkdir -p /home/$username/.config
 mkdir -p /home/$username/Pictures
 mkdir -p /usr/share/sddm/themes
 cp .Xresources /home/$username
-cp .Xnord /home/$username
+cp .Xdefaults /home/$username
+xrdb ~/.Xresources
+xrdb -merge ~/.Xresources
 cp -R dotfiles/* /home/$username/.config/
 cp background.jpg /home/$username/Pictures/
 chown -R $username:$username /home/$username
