@@ -32,7 +32,7 @@ git clone https://github.com/powerline/fonts.git --depth=1
 ./fonts/install.sh
 fc-cache -vf
 
-cp .bashrc /root/
+#cp .bashrc /root/
 
 su $username
 
@@ -72,7 +72,7 @@ git clone https://github.com/adi1090x/rofi.git
 mkdir -p $usrhome/.local/share/fonts
 cp -rf rofi/fonts/* $usrhome/.local/share/fonts/
 
-cp .bashrc $usrhome/
+# cp .bashrc $usrhome/
 
 rm -rf $builddir
 
