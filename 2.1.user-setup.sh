@@ -1,5 +1,5 @@
-git clone https://github.com/romkatv/powerlevel10k.git .
-cp powerlevel10k/ $ZSH_CUSTOM/themes/
+git clone https://github.com/romkatv/powerlevel10k.git /tmp/l10k
+cp -r /tmp/l10k/ $ZSH_CUSTOM/themes/
 source $HOME/.zshrc
 p10k configure
 # git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
