@@ -17,8 +17,8 @@ sudo apt install firefox-esr neofetch -y
 
 cp .Xresources $HOME/
 cp .Xdefaults $HOME/
-xrdb ~/.Xresources
-xrdb -merge ~/.Xresources
+xrdb $HOME/.Xresources
+xrdb -merge $HOME/.Xresources
 
 sudo cp dotfiles/sddm.conf /etc/sddm.conf
 cp -R dotfiles/* $HOME/.config/
@@ -27,7 +27,7 @@ cp background.jpg $HOME/Pictures/
 tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
  
 
-git clone https://github.com/vinceliuice/Layan-cursors /tmp/
+git clone https://github.com/vinceliuice/Layan-cursors.git /tmp/.
 # cd Layan-cursors
 sudo /tmp/Layan-cursors/install.sh
 sudo mkdir -p /usr/share/icons/default/

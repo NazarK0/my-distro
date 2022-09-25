@@ -8,10 +8,8 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/cdimage/uno
 *do NOT grab the EDU download and this includes non-free and firmware*
 ### Base Stuff - Root
 
-_Run as ROOT_
+_Run as ROOT, enter root login and password
 ```
-sudo su
-apt update
 apt install git
 cd /tmp
 git clone https://github.com/Nazark0/my-distro.git
