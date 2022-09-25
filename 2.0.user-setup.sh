@@ -10,7 +10,7 @@ mkdir -p $HOME/Programs
 
 sudo chown -R $USER:$USER $HOME
 
-sudo apt install zsh papirus-icon-theme fonts-noto-color-emoji fonts-firacode fonts-material-design-icons-iconfont -y
+sudo apt install zsh papirus-icon-theme fonts-noto-color-emoji fonts-font-awesome fonts-firacode fonts-material-design-icons-iconfont -y
 sudo apt install firefox-esr neofetch -y
 
 cp .Xresources $HOME/
