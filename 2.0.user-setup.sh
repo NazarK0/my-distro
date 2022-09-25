@@ -6,11 +6,12 @@ cp .Xdefaults $HOME/
 xrdb ~/.Xresources
 xrdb -merge ~/.Xresources
 
+sudo cp dotfiles/sddm.conf /etc/sddm.conf
 cp -R dotfiles/* $HOME/.config/
 cp background.jpg $HOME/Pictures/
-chown -R $USER:$USER $HOME
+sudo chown -R $USER:$USER $HOME
 tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
-cp dotfiles/sddm.conf /etc/sddm.conf 
+ 
 
 git clone https://github.com/vinceliuice/Layan-cursors /tmp/
 # cd Layan-cursors
@@ -29,3 +30,4 @@ rm -rf /tmp/*
 #configure zsh
 chsh -s /bin/zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+

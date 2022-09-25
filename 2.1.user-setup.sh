@@ -1,4 +1,4 @@
-$ZSH_CUSTOM$ = $(/root/.oh-my-zsh/custom)
+$ZSH_CUSTOM$ = $(/$USER/.oh-my-zsh/custom)
 sudo git clone https://github.com/romkatv/powerlevel10k.git --depth=1 $ZSH_CUSTOM/themes/powerlevel10k/ 
 sed -i 's#ZSH_THEME="*"#ZSH_THEME="powerlevel10k/powerlevel10k"#g' $HOME/.zshrc
 

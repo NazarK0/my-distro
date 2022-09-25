@@ -2,7 +2,7 @@
 
 username=$(id -u -n 1000)
 usrhome= $(/home/$username)
-builddir=$(/tmp)
+builddir=$(/tmp/build)
 mkdir -p $builddir
 
 # Add to Debian backports branch
