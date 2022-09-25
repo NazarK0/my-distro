@@ -11,8 +11,9 @@ cat ./sources.list >> /etc/apt/sources.list
 # Update packages list
 apt update
 
-apt install sudo zip unzip picom bspwm polybar deepin-terminal rofi sxhkd lxpolkit lxappearance pulseaudio -y
+apt install sudo zip unzip picom bspwm deepin-terminal rofi sxhkd lxpolkit lxappearance pulseaudio -y
 apt install feh lxappearance libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 x11-xserver-utils -y
+sudo apt -t bullseye-backports install polybar -y
 
 usermod -aG sudo $username
 
