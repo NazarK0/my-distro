@@ -27,7 +27,7 @@ mkdir -p /usr/share/icons/default/
 
 cp dotfiles/sddm.conf /etc/sddm.conf
 tar -xzf sugar-candy.tar.gz -C /usr/share/sddm/themes
-sleep 5
+cp fonts/* /usr/share/fonts
 
 cd $builddir
 
@@ -43,6 +43,7 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v1.1.0/Meslo.zip
 unzip Meslo.zip -d /usr/share/fonts
 git clone https://github.com/powerline/fonts.git --depth=1
 ./fonts/install.sh
+
 fc-cache -vf
 
 chown -R $username $builddir
