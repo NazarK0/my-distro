@@ -20,6 +20,9 @@ apt install sudo zip unzip picom bspwm deepin-terminal rofi sxhkd lxpolkit lxapp
 apt install feh lxappearance libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 x11-xserver-utils -y
 sudo apt -t bullseye-backports install polybar -y
 
+systemctl enable sddm
+systemctl set-default graphical.target
+
 usermod -aG sudo $username
 
 mkdir -p /usr/share/sddm/themes
