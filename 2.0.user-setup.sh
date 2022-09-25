@@ -43,5 +43,5 @@ cp -rf /tmp/rofi/fonts/* $HOME/.local/share/fonts/
 
 #configure zsh
 chsh -s /bin/zsh
-sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" -y
 
