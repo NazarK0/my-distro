@@ -14,11 +14,11 @@ uptime=$(uptime -p | sed -e 's/up //g')
 rofi_command="rofi -theme $dir/$theme"
 
 # Options
-shutdown="shutdown "
-reboot="reboot "
-lock="lock "
-suspend="suspend "
-logout="logout "
+shutdown="Вимкнути"
+reboot="Перезавантажити"
+lock="Призупинити"
+suspend="Приспати"
+logout="Вийти"
 
 # Message
 msg() {
@@ -28,7 +28,7 @@ msg() {
 # Variable passed to rofi
 options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 
-chosen="$(echo -e "$options" | $rofi_command -p "В роботі: $uptime" -dmenu -selected-row 2)"
+chosen="$(echo -e "$options" | $rofi_command -p "в роботі: $uptime" -dmenu -selected-row 2)"
 case $chosen in
     $shutdown)
 			systemctl poweroff

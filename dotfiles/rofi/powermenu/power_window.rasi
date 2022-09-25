@@ -7,12 +7,11 @@
  */
 
 configuration {
-    font: "FantasqueSansMono Nerd Font 12";
-    show-icons: true;
-    icon-theme:"Papirus";
+    font: "FantasqueSansMono Nerd Font 10";
+    show-icons: false;
     drun-display-format: "{name}";
     disable-history: false;
-	sidebar-mode: false;
+    sidebar-mode: false;
 }
 
 @import "styles/colors.rasi"
@@ -21,102 +20,37 @@ window {
     transparency: "real";
     background-color: @background;
     text-color: @foreground;
-    border-radius: 8px;
-    height: 40%;
-    width: 70%;
-    location: center;
-    x-offset: 0;
-    y-offset: 0;
+    border-radius: 3px;
+    height: 120px;
+    width: 400px;
+    location: northeast;
+    x-offset: -3px;
+    y-offset: 45px;
 }
 
 prompt {
     enabled: true;
-    padding: 1% 1% 1% 0%;
-    background-color: @background-alt;
-    text-color: @foreground;
+    expand: false;
 }
 
 textbox-prompt-colon {
     expand: false;
-    str: "System |";
-    background-color: @background-alt;
-    text-color: @foreground;
-    padding: 1% 0.5% 1% 7%;
+    str: "Система";
 }
 
 inputbar {
     children: [ textbox-prompt-colon, prompt ];
-    background-color: @background-alt;
-    text-color: @foreground;
     expand: false;
-    border: 0% 0% 0.2% 0%;
-    border-radius: 0% 0% 0% 0%;
+    border: 0 0 1px 0;
     border-color: @border;
-    margin: 0% 33.25% 0% 20%;
-    padding: 0.5%;
+    padding: 13px 23px;
+    margin: 0 17px;
     position: center;
 }
 
 listview {
-    background-color: @background;
-    margin: 0% 0% 0% 0%;
-    spacing: 3%;
+    spacing: 5px;
     cycle: true;
     dynamic: true;
     layout: horizontal;
-}
-
-mainbox {
-    background-color: @background;
-    children: [ listview, inputbar ];
-    spacing: 0%;
-    padding: 5% 0% 5% 13.25%;
-}
-
-element {
-    background-color: @background-alt;
-    text-color: @foreground;
-    orientation: horizontal;
-    border-radius: 0%;
-}
-
-element-text {
-    background-color: #00000000;
-    text-color: inherit;
-    font: "feather 64";
-    expand: true;
-    horizontal-align: 0.5;
-    vertical-align: 0.5;
-    margin: 6.5% 4% 6.5% 4%;
-}
-
-element normal.urgent,
-element alternate.urgent {
-    background-color: @urgent;
-    text-color: @foreground;
-    border-radius: 0.2%;
-}
-
-element normal.active,
-element alternate.active {
-    background-color: @background-alt;
-    text-color: @foreground;
-}
-
-element selected {
-    background-color: @selected;
-    text-color: @foreground;
-    border: 0% 0% 0.2% 0%;
-    border-radius: 0%;
-    border-color: @border;
-}
-
-element selected.urgent {
-    background-color: @urgent;
-    text-color: @foreground;
-}
-
-element selected.active {
-    background-color: @background-alt;
-    color: @foreground;
 }
