@@ -1,0 +1,31 @@
+/*
+ *
+ * Author  : Nazar Vanivskyi
+ * Mail    : staticman999@gmail.com
+ * Github  : NazarK0
+ *
+ */
+
+configuration {
+    font: "FantasqueSansMono Nerd Font 12";
+    show-icons: true;
+    icon-theme:"Papirus";
+    drun-display-format: "{name}";
+    disable-history: false;
+	sidebar-mode: false;
+}
+
+@import "styles/colors.rasi"
+
+window {
+    transparency: "real";
+    background-color: @background;
+    text-color: @foreground;
+    border-radius: 8px;
+    height: 180px;
+    width: 280px;
+    location: center;
+    x-offset: 0;
+    y-offset: 0;
+}
+

@@ -7,4 +7,4 @@ configuration {
   display-window: "﩯 ";
   display-combi: "  ";
 }
-@theme "themes/sidetab.rasi"
+@theme "launcher_menu/launcher_menu.rasi"
