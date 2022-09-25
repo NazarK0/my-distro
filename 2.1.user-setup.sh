@@ -10,5 +10,5 @@ p10k configure
 # source $HOME/.zshrc
 
 
-rm -rf /tmp/*
+#rm -rf /tmp/*
 echo "Done!"
