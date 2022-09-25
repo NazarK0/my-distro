@@ -25,17 +25,15 @@ usermod -aG sudo $username
 mkdir -p /usr/share/sddm/themes
 mkdir -p /usr/share/icons/default/
 
-
-
-
 cp dotfiles/sddm.conf /etc/sddm.conf
-tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
+tar -xzf sugar-candy.tar.gz -C /usr/share/sddm/themes
 sleep 5
 
 cd $builddir
 
 # Download Nordic Theme
-git clone https://github.com/EliverLara/Nordic.git --depth=1 /usr/share/themes/
+git clone https://github.com/EliverLara/Nordic.git --depth=1 $builddir/themes/Nordic
+cp -r $builddir/themes/* /usr/share/themes/
 sleep 5
 
 # Fira Code Nerd Font variant needed
@@ -51,5 +49,3 @@ chown -R $username $builddir
 cd ../my-distro
 
 su $username
-
-
