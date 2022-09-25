@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mkdir -p $HOME/.config
 mkdir -p $HOME/Pictures
 mkdir -p $HOME/Downloads

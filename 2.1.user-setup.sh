@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 sudo git clone https://github.com/romkatv/powerlevel10k.git --depth=1 $ZSH_CUSTOM/themes/powerlevel10k/ 
 pattern=$(grep ^ZSH_THEME="*" $HOME/.zshrc)
