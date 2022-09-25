@@ -1,17 +1,16 @@
 #!/bin/bash
 
 username=$(id -u -n 1000)
-usrhome= $(/home/$username)
 builddir=$(/tmp/build)
 mkdir -p $builddir
 
 # Add to Debian backports branch
 cat ./sources.list >> /etc/apt/sources.list
 
-sleep(2)
+sleep 2
 
 sed -i 's/^deb cdrom:*/ /' /etc/apt/sources.list
-sleep(2)
+sleep 2
 
 # Update packages list
 apt update
@@ -21,10 +20,10 @@ apt install feh lxappearance libqt5svg5 qml-module-qtquick-controls qml-module-q
 sudo apt -t bullseye-backports install polybar -y
 
 usermod -aG sudo $username
-sleep(2)
+sleep 2
 
 cd $builddir
-sleep(2)
+sleep 2
 
 # Download Nordic Theme
 git clone https://github.com/EliverLara/Nordic.git --depth=1 /usr/share/themes/
