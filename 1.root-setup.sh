@@ -13,8 +13,8 @@ sed -i 's/^deb cdrom:*/#/' /etc/apt/sources.list
 # Update packages list
 apt update
 
-apt install sudo zip unzip picom bspwm deepin-terminal rofi sxhkd lxpolkit lxappearance pulseaudio xorg -y
-apt install feh lxappearance libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
+apt install sudo sddm zip unzip picom bspwm deepin-terminal rofi sxhkd lxpolkit lxappearance pulseaudio xorg -y
+apt install feh libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 sudo apt -t bullseye-backports install polybar -y
 
 systemctl enable sddm
