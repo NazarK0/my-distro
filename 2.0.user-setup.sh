@@ -1,6 +1,16 @@
 mkdir -p $HOME/.config
 mkdir -p $HOME/Pictures
+mkdir -p $HOME/Downloads
+mkdir -p $HOME/Music
+mkdir -p $HOME/Books
+mkdir -p $HOME/Projects
+mkdir -p $HOME/Programs
+
 mkdir -p /usr/share/sddm/themes
+
+sudo apt install zsh papirus-icon-theme fonts-noto-color-emoji fonts-firacode fonts-material-design-icons-iconfont
+sudo apt install firefox-esr neofetch
+
 cp .Xresources $HOME/
 cp .Xdefaults $HOME/
 xrdb ~/.Xresources

@@ -11,16 +11,15 @@ cat ./sources.list >> /etc/apt/sources.list
 # Update packages list
 apt update
 
-apt install sudo zip unzip picom bspwm polybar deepin-terminal zsh rofi neofetch sxhkd lxpolkit lxappearance fonts-material-design-icons-iconfont pulseaudio -y
-apt install papirus-icon-theme feh lxappearance fonts-noto-color-emoji fonts-firacode libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
+apt install sudo zip unzip picom bspwm polybar deepin-terminal rofi sxhkd lxpolkit lxappearance pulseaudio -y
+apt install feh lxappearance libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 x11-xserver-utils -y
 
 usermod -aG sudo $username
 
 cd $builddir
 
 # Download Nordic Theme
-git clone https://github.com/EliverLara/Nordic.git --depth=1
-cp ./Nordic/ /usr/share/themes/
+git clone https://github.com/EliverLara/Nordic.git --depth=1 /usr/share/themes/
 
 # Fira Code Nerd Font variant needed
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v1.1.0/FiraCode.zip
