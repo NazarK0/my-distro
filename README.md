@@ -1,5 +1,5 @@
 # Debian-titus
-Debian customizations from Nazar Vanivskyi, based on Chris Titus Tech repo
+Debian customizations from Nazar Vanivskyi, based on [Chris Titus Tech](https://github.com/ChrisTitusTech/Debian-titus) repo
  
 ### Download Debian non-free netinstall
 
