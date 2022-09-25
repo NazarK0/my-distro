@@ -10,15 +10,15 @@ mkdir -p $HOME/Programs
 
 sudo chown -R $USER:$USER $HOME
 
-mkdir -p /usr/share/sddm/themes
+sudo mkdir -p /usr/share/sddm/themes
 
 sudo apt install zsh papirus-icon-theme fonts-noto-color-emoji fonts-firacode fonts-material-design-icons-iconfont -y
 sudo apt install firefox-esr neofetch -y
 
 cp .Xresources $HOME/
 cp .Xdefaults $HOME/
-xrdb $HOME/.Xresources
-xrdb -merge $HOME/.Xresources
+sudo xrdb $HOME/.Xresources
+sudo xrdb -merge $HOME/.Xresources
 
 sudo cp dotfiles/sddm.conf /etc/sddm.conf
 cp -R dotfiles/* $HOME/.config/
