@@ -3,14 +3,14 @@
 mkdir -p /tmp/build
 
 username=$(id -u -n 1000)
-builddir=$(/tmp/build)
+builddir=/tmp/build
 
 # Add to Debian backports branch
 cat ./sources.list >> /etc/apt/sources.list
 
 sleep 2
 
-sed -i 's/^deb cdrom:*/ /' /etc/apt/sources.list
+sed -i 's/^deb cdrom:*/#/' /etc/apt/sources.list
 sleep 2
 
 # Update packages list
