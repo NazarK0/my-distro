@@ -14,5 +14,8 @@ apt install git
 cd /tmp
 git clone https://github.com/Nazark0/my-distro.git
 cd my-distro
-./setup.sh
+./1.root-setup.sh
+./2.0.user-setup.sh
+sudo reboot
+./2.1.user-setup.sh
 ```
