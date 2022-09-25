@@ -1,8 +1,9 @@
 #!/bin/bash
 
+mkdir -p /tmp/build
+
 username=$(id -u -n 1000)
 builddir=$(/tmp/build)
-mkdir -p $builddir
 
 # Add to Debian backports branch
 cat ./sources.list >> /etc/apt/sources.list
