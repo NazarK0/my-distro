@@ -21,6 +21,17 @@ apt install feh lxappearance libqt5svg5 qml-module-qtquick-controls qml-module-q
 sudo apt -t bullseye-backports install polybar -y
 
 usermod -aG sudo $username
+
+mkdir -p /usr/share/sddm/themes
+mkdir -p /usr/share/icons/default/
+
+cp .Xresources /home/$username/
+cp .Xdefaults /home/$username/
+xrdb $HOME/.Xresources
+xrdb -merge $HOME/.Xresources
+
+cp dotfiles/sddm.conf /etc/sddm.conf
+tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
 sleep 2
 
 cd $builddir
