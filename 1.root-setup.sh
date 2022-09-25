@@ -24,6 +24,7 @@ usermod -aG sudo $username
 sleep(2)
 
 cd $builddir
+sleep(2)
 
 # Download Nordic Theme
 git clone https://github.com/EliverLara/Nordic.git --depth=1 /usr/share/themes/
