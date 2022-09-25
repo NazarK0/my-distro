@@ -18,9 +18,13 @@ configuration {
 window {
     background-color: @background;
     border: 0;
-    padding: 10;
-    height: 70%;
-    width: 30%;
+    border-radius: 3px;
+    padding: 5px;
+    height: 85%;
+    width: 23%;
+    location: northwest;
+    y-offset: 45px;
+    x-offset: 2px;
 }
 listview {
     lines: 10;
@@ -48,7 +52,7 @@ listview {
 }
 element {
     border:  0;
-    padding: 1px ;
+    padding: 10px 3px;
 }
 element-text {
     background-color: inherit;
