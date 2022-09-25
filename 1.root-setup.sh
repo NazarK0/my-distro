@@ -8,7 +8,10 @@ mkdir -p $builddir
 # Add to Debian backports branch
 cat ./sources.list >> /etc/apt/sources.list
 
-sed -i 's/^deb cdrom:*$/ /g' /etc/apt/sources.list
+sleep(2)
+
+sed -i 's/^deb cdrom:*/ /' /etc/apt/sources.list
+sleep(2)
 
 # Update packages list
 apt update
@@ -18,6 +21,7 @@ apt install feh lxappearance libqt5svg5 qml-module-qtquick-controls qml-module-q
 sudo apt -t bullseye-backports install polybar -y
 
 usermod -aG sudo $username
+sleep(2)
 
 cd $builddir
 
@@ -34,7 +38,7 @@ git clone https://github.com/powerline/fonts.git --depth=1
 ./fonts/install.sh
 fc-cache -vf
 
-chown -R $builddir
+chown -R $username $builddir
 
 su $username
 
