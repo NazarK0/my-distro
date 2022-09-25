@@ -16,15 +16,15 @@ sudo apt install firefox-esr neofetch -y
 cp -R dotfiles/* $HOME/.config/
 cp background.jpg $HOME/Pictures/
 
-git clone https://github.com/vinceliuice/Layan-cursors.git /tmp
+git clone https://github.com/vinceliuice/Layan-cursors.git /tmp/cursors
 # cd Layan-cursors
-sudo /tmp/Layan-cursors/install.sh
+sudo /tmp/cursors/install.sh
 
 echo "[Icon Theme]" | sudo tee /usr/share/icons/default/index.theme > /dev/null
 echo "Inherits=Layan-cursors" | sudo tee -a /usr/share/icons/default/index.theme > /dev/null
 # Powermenu Unicode problem fix
 cd ../
-git clone https://github.com/adi1090x/rofi.git /tmp
+git clone https://github.com/adi1090x/rofi.git /tmp/rofi
 mkdir -p $HOME/.local/share/fonts
 cp -rf /tmp/rofi/fonts/* $HOME/.local/share/fonts/
 
