@@ -6,10 +6,12 @@ mkdir -p $HOME/Books
 mkdir -p $HOME/Projects
 mkdir -p $HOME/Programs
 
+sudo chown -R $USER:$USER $HOME
+
 mkdir -p /usr/share/sddm/themes
 
-sudo apt install zsh papirus-icon-theme fonts-noto-color-emoji fonts-firacode fonts-material-design-icons-iconfont
-sudo apt install firefox-esr neofetch
+sudo apt install zsh papirus-icon-theme fonts-noto-color-emoji fonts-firacode fonts-material-design-icons-iconfont -y
+sudo apt install firefox-esr neofetch -y
 
 cp .Xresources $HOME/
 cp .Xdefaults $HOME/
@@ -19,7 +21,7 @@ xrdb -merge ~/.Xresources
 sudo cp dotfiles/sddm.conf /etc/sddm.conf
 cp -R dotfiles/* $HOME/.config/
 cp background.jpg $HOME/Pictures/
-sudo chown -R $USER:$USER $HOME
+
 tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
  
 
@@ -35,7 +37,7 @@ git clone https://github.com/adi1090x/rofi.git /tmp/
 mkdir -p $HOME/.local/share/fonts
 cp -rf /tmp/rofi/fonts/* $HOME/.local/share/fonts/
 
-rm -rf /tmp/*
+
 
 #configure zsh
 chsh -s /bin/zsh

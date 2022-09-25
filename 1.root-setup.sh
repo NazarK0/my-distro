@@ -40,6 +40,7 @@ git clone https://github.com/powerline/fonts.git --depth=1
 fc-cache -vf
 
 chown -R $username $builddir
+cd ../my-distro
 
 su $username
 
