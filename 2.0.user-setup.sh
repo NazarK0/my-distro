@@ -24,7 +24,7 @@ sudo cp dotfiles/sddm.conf /etc/sddm.conf
 cp -R dotfiles/* $HOME/.config/
 cp background.jpg $HOME/Pictures/
 
-tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
+sudo tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
  
 
 git clone https://github.com/vinceliuice/Layan-cursors.git /tmp/.
