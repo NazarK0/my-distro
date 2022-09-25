@@ -8,6 +8,8 @@ mkdir -p $builddir
 # Add to Debian backports branch
 cat ./sources.list >> /etc/apt/sources.list
 
+sed -i 's/^deb cdrom:*$/ /g' /etc/apt/sources.list
+
 # Update packages list
 apt update
 
