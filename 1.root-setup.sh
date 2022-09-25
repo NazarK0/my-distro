@@ -37,9 +37,9 @@ cp -r $builddir/themes/* /usr/share/themes/
 sleep 5
 
 # Fira Code Nerd Font variant needed
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v1.1.0/FiraCode.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip
 unzip FiraCode.zip -d /usr/share/fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v1.1.0/Meslo.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Meslo.zip
 unzip Meslo.zip -d /usr/share/fonts
 git clone https://github.com/powerline/fonts.git --depth=1
 ./fonts/install.sh
