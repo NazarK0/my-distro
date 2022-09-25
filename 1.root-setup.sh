@@ -30,8 +30,7 @@ mkdir -p /usr/share/icons/default/
 
 cp .Xresources /home/$username/
 cp .Xdefaults /home/$username/
-xrdb $HOME/.Xresources
-xrdb -merge $HOME/.Xresources
+
 
 cp dotfiles/sddm.conf /etc/sddm.conf
 tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes

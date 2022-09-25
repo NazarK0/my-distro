@@ -32,3 +32,8 @@ cp -rf /tmp/rofi/fonts/* $HOME/.local/share/fonts/
 chsh -s /bin/zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" -y
 
+xrdb $HOME/.Xresources
+xrdb -merge $HOME/.Xresources
+
+sudo reboot
+
