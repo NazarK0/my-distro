@@ -21,6 +21,7 @@ apt install sudo xorg pulseaudio feh psmisc picom sxhkd libqt5svg5 qml-module-qt
 #apt install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson -y
 # ly build dependencies
 apt install build-essential libpam0g-dev libxcb-xkb-dev -y
+apt install fonts-powerline -y
 
 # install xmenu
 
@@ -38,14 +39,8 @@ systemctl enable ly.service
 # install fonts
 cp fonts/* /usr/share/fonts
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip
-unzip FiraCode.zip -d /usr/share/fonts
-
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Meslo.zip
-unzip Meslo.zip -d /usr/share/fonts
-
-git clone https://github.com/powerline/fonts.git --depth=1
-./fonts/install.sh
+wget https://github.com/ryanoasis/nerd-fonts/archive/refs/tags/v2.2.2.zip
+unzip v2.2.2.zip -d /usr/share/fonts
 
 fc-cache -vf
 
