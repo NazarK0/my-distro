@@ -17,6 +17,7 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * [Ly](https://github.com/fairyglade/ly) - a lightweight TUI (ncurses-like) display manager
 * some Qt template modules: [libqt5svg5](https://packages.debian.org/en/sid/libqt5svg5), [qml-module-qtquick-controls](https://packages.debian.org/sid/qml-module-qtquick-controls), [qml-module-qtquick-controls2](https://packages.debian.org/sid/qml-module-qtquick-controls2)
 * [tint2](https://github.com/o9000/tint2) - a simple panel/taskbar made for modern X window managers
+* [bspwm](https://github.com/baskerville/bspwm) - a tiling window manager that represents windows as the leaves of a full binary tree
 * zip, unzip - for archive processing
 
 ### Fonts
