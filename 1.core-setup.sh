@@ -31,6 +31,8 @@ cd $gitdir/ly
 make
 make install installsystemd
 systemctl enable ly.service
+#set tty to 7 in /etc/ly/config.ini
+systemctl disable getty@tty2.service
 
 # xmenu build dependencies
 apt install -y libimlib2-dev libx11-dev libxinerama-dev libxft-dev
