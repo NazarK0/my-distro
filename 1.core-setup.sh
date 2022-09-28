@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir -p /usr/build-distro
-mkdir -p /usr/git-distro
+mkdir -p /mydistro/build
+mkdir -p /mydistro/git-tmp
 
 username=$(id -u -n 1000)
 builddir=/usr/build-distro
