@@ -19,12 +19,16 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * [tint2](https://github.com/o9000/tint2) - a simple panel/taskbar made for modern X window managers
 * [bspwm](https://github.com/baskerville/bspwm) - a tiling window manager that represents windows as the leaves of a full binary tree
 * zip, unzip - for archive processing
+* [lxappearance](https://packages.debian.org/en/sid/lxappearance) - GTK+ theme switcher
+* [kitty](https://sw.kovidgoyal.net/kitty) - The fast, feature-rich, GPU based terminal emulator
 
 ### Fonts
+* Fontawesome 4 Free
 * Fontawesome 5 Free
 * Fontawesome 6 Free
 * [Powerline batch fonts](https://github.com/powerline/fonts)
 * [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases/)
+* emoji font
 
 ## Install steps
 

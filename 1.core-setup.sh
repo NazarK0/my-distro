@@ -16,7 +16,8 @@ sed -i 's/^deb cdrom:*/#/' /etc/apt/sources.list
 # Update packages list
 apt update
 
-apt install sudo xorg pulseaudio feh psmisc picom sxhkd libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 tint2 bspwm zip unzip -y
+apt install sudo xorg pulseaudio feh psmisc picom sxhkd libqt5svg5 qml-module-qtquick-controls -y
+apt install qml-module-qtquick-controls2 tint2 bspwm zip unzip lxappearance -y
 
 # picom build dependencies
 #apt install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson -y
@@ -61,6 +62,7 @@ make USE_WIDE=True
 systemctl set-default graphical.target
 
 # install fonts
+apt install -y fonts-noto-color-emoji fonts-firacode fonts-font-awesome
 cp fonts/* /usr/share/fonts
 
 wget https://github.com/ryanoasis/nerd-fonts/archive/refs/tags/v2.2.2.zip
@@ -68,6 +70,18 @@ unzip v2.2.2.zip -d /usr/share/fonts
 
 fc-cache -vf
 
+#install apps
+apt install -y kitty
+
 #user specific operations
 usermod -aG sudo $username
 chown -R $username $builddir
+chown -R $username:desktop_users /home/$username
+
+#setup configs
+mkdir -p /home/$username/.config
+mkdir -p /home/$username/.background
+mv config/.Xresources /home/$username/.Xresources
+mv config/.Xdefaults /home/$username/.Xdefaults
+mv config/background.jpg /home/$username/.background/background.jpg
+cp -R config/* /home/$username/.config/
