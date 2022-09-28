@@ -16,36 +16,44 @@ sed -i 's/^deb cdrom:*/#/' /etc/apt/sources.list
 # Update packages list
 apt update
 
-apt install sudo xorg pulseaudio feh psmisc picom sxhkd libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 tint2 bspwn zip unzip -y
+apt install sudo xorg pulseaudio feh psmisc picom sxhkd libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 tint2 bspwm zip unzip -y
 
 # picom build dependencies
 #apt install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson -y
 
-# ly build dependencies
-apt install build-essential libpam0g-dev libxcb-xkb-dev -y
-
-#ncpamixer build dependencies
-apt install libncurses-dev libpulse-dev -y
-
 apt install fonts-powerline -y
 
-# install xmenu
-git clone https://github.com/phillbush/xmenu.git --depth=1 $gitdir/xmenu
-cd $gitdir/xmenu
-make
-make install
-
-# install ncpamixer
-git clone https://github.com/fulhax/ncpamixer.git --depth=1 $gitdir/ncpamixer
-cd $gitdir/ncpamixer
-make USE_WIDE=True
-
+# ly build dependencies
+apt install build-essential libpam0g-dev libxcb-xkb-dev -y
 # install Ly
 git clone --recurse-submodules https://github.com/fairyglade/ly $gitdir/ly
 cd $gitdir/ly
 make
 make install installsystemd
 systemctl enable ly.service
+
+# xmenu build dependencies
+apt install -y libimlib2-dev libx11-dev libxinerama-dev libxft-dev
+# install xmenu
+git clone https://github.com/phillbush/xmenu.git --depth=1 $gitdir/xmenu
+cd $gitdir/xmenu
+make
+make install
+
+#ncpamixer build dependencies
+apt install build-essential gcc libssl-dev libncurses-dev libpulse-dev -y
+#install cmake
+wget https://github.com/Kitware/CMake/releases/download/v3.21.0/cmake-3.21.0.tar.gz $builddir/cmake
+tar xvf cmake-3.21.0.tar.gz
+cd cmake-3.21.0 
+./bootstrap 
+gmake
+make install
+
+# install ncpamixer
+git clone https://github.com/fulhax/ncpamixer.git --depth=1 $gitdir/ncpamixer
+cd $gitdir/ncpamixer
+make USE_WIDE=True
 
 #install window manager
 systemctl set-default graphical.target
