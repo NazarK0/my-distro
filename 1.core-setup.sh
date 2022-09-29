@@ -26,6 +26,8 @@ apt install fonts-powerline -y
 
 # ly build dependencies
 apt install build-essential libpam0g-dev libxcb-xkb-dev -y
+# ly dependencies
+apt install -y libncurses5 util-linux xauth libx11-xcb-dev xcb
 # install Ly
 git clone --recurse-submodules https://github.com/fairyglade/ly $gitdir/ly
 cd $gitdir/ly
