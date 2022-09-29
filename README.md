@@ -6,7 +6,6 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 
 
 ### Core packages
-* [Xorg](https://www.x.org/wiki/) - an open source implementation of the X Window System
 * [pulseaudio](https://www.freedesktop.org/wiki/Software/PulseAudio/) - a sound server system for POSIX OSes
 * [Xmenu](https://github.com/phillbush/xmenuv) - menu utility for X
 * [ncpamixer](https://github.com/fulhax/ncpamixer) -  mixer for PulseAudio in console
@@ -14,7 +13,7 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * [psmisc](https://packages.debian.org/en/sid/psmisc) - utilities that use the proc file system (fuser, killall, peekfd, pstree, prtstat)
 * [picom](https://github.com/yshui/picom) - picom is a compositor for X, it add transparency
 * [sxhkd](https://github.com/baskerville/sxhkd) - is an X daemon that reacts to input events by executing commands (hotkey manager)
-* [Ly](https://github.com/fairyglade/ly) - a lightweight TUI (ncurses-like) display manager
+* [sddm](https://github.com/sddm/sddm) - a modern display manager for X11 and Wayland
 * some Qt template modules: [libqt5svg5](https://packages.debian.org/en/sid/libqt5svg5), [qml-module-qtquick-controls](https://packages.debian.org/sid/qml-module-qtquick-controls), [qml-module-qtquick-controls2](https://packages.debian.org/sid/qml-module-qtquick-controls2)
 * [tint2](https://github.com/o9000/tint2) - a simple panel/taskbar made for modern X window managers
 * [bspwm](https://github.com/baskerville/bspwm) - a tiling window manager that represents windows as the leaves of a full binary tree
@@ -29,6 +28,7 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * [Powerline batch fonts](https://github.com/powerline/fonts)
 * [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases/)
 * emoji font
+* fonts from powerline
 
 ## Install steps
 
