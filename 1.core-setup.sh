@@ -17,7 +17,7 @@ sed -i 's/^deb cdrom:*/#/' /etc/apt/sources.list
 apt update
 
 apt install sudo sddm bspwm pulseaudio feh psmisc picom sxhkd libqt5svg5 qml-module-qtquick-controls -y
-apt install qml-module-qtquick-controls2 tint2 zip unzip -y
+apt install qml-module-qtquick-controls2 tint2 zip unzip x11-xserver-utils -y
 
 systemctl enable sddm
 systemctl set-default graphical.target
@@ -58,6 +58,8 @@ fc-cache -vf
 apt install -y kitty
 
 # user setup operations
-usermod -aG sudo $username
-chown -R $username $builddir
-chown -R $username:desktop_users /home/$username
+/usr/sbin/usermod -aG sudo $username
+chmod -R 770 /mydistro
+chown -R :users /mydistro
+/usr/sbin/usermod -aG users $username
+chown -R $username:users /home/$username
