@@ -16,7 +16,7 @@ super + Escape
 
 # My program Hotkeys
 super + b
-	brave-browser-stable
+	firefox-esr
 
 super + p 
 	flameshot full -p /media/drive/Screenshots
@@ -48,8 +48,9 @@ super + y
 super + g
 	bspc node -s biggest.window
 
-super + e
-	thunar
+#super + e
+#	thunar
+
 #
 # state/flags
 #
