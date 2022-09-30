@@ -16,8 +16,10 @@ sed -i 's/^deb cdrom:*/#/' /etc/apt/sources.list
 # Update packages list
 apt update
 
-apt install sudo sddm bspwm pulseaudio feh psmisc picom sxhkd libqt5svg5 qml-module-qtquick-controls -y
-apt install qml-module-qtquick-controls2 tint2 zip unzip x11-xserver-utils -y
+apt install sudo sddm bspwm pulseaudio feh psmisc picom sxhkd -y
+apt install tint2 zip unzip x11-xserver-utils -y
+#dependencies for sddm theme 
+apt install libqt5svg5 qml‑module‑qtquick‑layouts qml-module-qtquick-controls qml-module-qtquick-controls2 qml‑module‑qtgraphicaleffects -y
 
 systemctl enable sddm
 systemctl set-default graphical.target
