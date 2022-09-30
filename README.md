@@ -30,6 +30,9 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * emoji font
 * fonts from powerline
 
+### Icons
+* [icons8](https://icons8.com)
+
 ## Install steps
 
 1. Run as ROOT, enter root login and password
