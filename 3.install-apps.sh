@@ -1,5 +1,7 @@
 #!/bin/bash
 
+downloaddir=/distro-src/download
+
 # install utilities
 apt install -y curl ca-certificates gpg gnupg gnupg2 lsb-release software-properties-common apt-transport-https build-essential linux-headers-$(uname -r)
 sudo apt install -y default-jdk
@@ -8,6 +10,8 @@ sudo apt install flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 sudo mkdir -p /etc/apt/keyrings
+
+cd $downloaddir
 
 # Docker
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -49,17 +53,21 @@ echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.
 
 # IntelliJ IDEA
 wget https://download.jetbrains.com/idea/ideaIC-2021.2.1.tar.gz
-tar -zxvf ideaIC-*.tar.gz
+tar -zxvf ideaIC-*.tar.gz ‑C IntellijIDEA
 sudo mkdir /opt/idea/
 sudo chmod 777 /opt/idea/
+cd IntellijIDEA
 mv idea-*/* /opt/idea/
 cd /opt/idea/bin/
 sh idea.sh
+cd $downloaddir
 
 # VMware Player
-wget https://www.vmware.com/go/getplayer-linux
+wget https://www.vmware.com/go/getplayer-linux $downloaddir/VMwarePlayer
+cd VMwarePlayer
 chmod +x VMware-Player-Full-*.bundle
 sudo ./VMware-Player-Full-*.bundle
+cd ..
 
 # Anydesk
 wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
@@ -76,8 +84,8 @@ flatpak install flathub org.libreoffice.LibreOffice
 
 # PDF reader
 wget http://cdn01.foxitsoftware.com/pub/foxit/reader/desktop/linux/2.x/2.4/en_us/FoxitReader.enu.setup.2.4.4.0911.x64.run.tar.gz
-cd ~/Downloads
-tar xzvf FoxitReader*.tar.gz
+tar xzvf FoxitReader*.tar.gz ‑C FoxitReader
+cd FoxitReader
 sudo chmod a+x FoxitReader*.run
 sudo ./FoxitReader*.run
 
@@ -85,3 +93,5 @@ sudo apt update
 
 sudo apt install -y google-chrome-stable docker-ce docker-ce-cli containerd.io docker-compose-plugin gh dbeaver-ce code anydesk signal-desktop \
   firefox-esr filezilla transmission-cli transmission gimp kcalc audacity
+
+cd $HOME

@@ -1,11 +1,10 @@
 #!/bin/bash
 
-mkdir -p /mydistro/build
-mkdir -p /mydistro/git-tmp
+mkdir -p /distro-src/download
 
 username=$(id -u -n 1000)
-builddir=/usr/build-distro
-gitdir=/usr/git-distro
+downloaddir=/distro-src/download
+repodir=/distro-src/my-distro
 
 # Add to apt all necessary repos
 cat ./sources.list >> /etc/apt/sources.list
@@ -27,32 +26,35 @@ systemctl set-default graphical.target
 # xmenu build dependencies
 apt install -y libimlib2-dev libx11-dev libxinerama-dev libxft-dev
 # install xmenu
-git clone https://github.com/phillbush/xmenu.git --depth=1 $gitdir/xmenu
-cd $gitdir/xmenu
+git clone https://github.com/phillbush/xmenu.git --depth=1 $downloaddir/xmenu
+cd $downloaddir/xmenu
 make
 make install
+cd $repodir
 
 #ncpamixer build dependencies
 apt install build-essential gcc libssl-dev libncurses-dev libpulse-dev -y
 #install cmake
-wget https://github.com/Kitware/CMake/releases/download/v3.21.0/cmake-3.21.0.tar.gz $builddir/cmake
-tar xvf cmake-3.21.0.tar.gz
-cd cmake-3.21.0 
+wget https://github.com/Kitware/CMake/releases/download/v3.21.0/cmake-3.21.0.tar.gz $downloaddir/cmake
+tar xvf $downloaddir/cmake/cmake-3.21.0.tar.gz
+cd $downloaddir/cmake/cmake-3.21.0 
 ./bootstrap 
 gmake
 make install
+cd $repodir
 
 # install ncpamixer
-git clone https://github.com/fulhax/ncpamixer.git --depth=1 $gitdir/ncpamixer
-cd $gitdir/ncpamixer
+git clone https://github.com/fulhax/ncpamixer.git --depth=1 $downloaddir/ncpamixer
+cd $downloaddir/ncpamixer
 make USE_WIDE=True
+cd $repodir
 
 # install fonts
 apt install -y fonts-noto-color-emoji fonts-firacode fonts-font-awesome fonts-powerline
 cp ./fonts/* /usr/share/fonts
 
-wget https://github.com/ryanoasis/nerd-fonts/archive/refs/tags/v2.2.2.zip
-unzip v2.2.2.zip -d /usr/share/fonts
+wget https://github.com/ryanoasis/nerd-fonts/archive/refs/tags/v2.2.2.zip $downloaddir/nerd-fonts
+unzip $downloaddir/nerd-fonts/v2.2.2.zip -d /usr/share/fonts
 
 fc-cache -vf
 
