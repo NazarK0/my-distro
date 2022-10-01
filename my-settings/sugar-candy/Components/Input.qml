@@ -226,7 +226,7 @@ Column {
         height: root.font.pointSize * 4.5
         width: parent.width / 2
         anchors.horizontalCenter: parent.horizontalCenter
-        topMargin: 10
+        anchors.topMargin: 10
 
         TextField {
             id: password
