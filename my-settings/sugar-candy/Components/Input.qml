@@ -226,11 +226,12 @@ Column {
         height: root.font.pointSize * 4.5
         width: parent.width / 2
         anchors.horizontalCenter: parent.horizontalCenter
+        topMargin: 10
 
         TextField {
             id: password
             anchors.centerIn: parent
-            height: passwordField.height
+            height: username.height
             width: parent.width
             focus: config.ForcePasswordFocus == "true" ? true : false
             selectByMouse: true
