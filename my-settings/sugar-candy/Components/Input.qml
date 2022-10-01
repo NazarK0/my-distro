@@ -181,10 +181,10 @@ Column {
         TextField {
             id: username
             text: config.ForceLastUser == "true" ? selectUser.currentText : null
-            font.pointSize: root.font.pointSize * 1.6
+            font.pointSize: root.font.pointSize * 1.4
             font.capitalization: config.AllowBadUsernames == "false" ? Font.Capitalize : Font.MixedCase
             anchors.centerIn: parent
-            height: font.pointSize * 2.5
+            height: font.pointSize * 2.3
             width: parent.width
             placeholderText: config.TranslatePlaceholderUsername || textConstants.userName
             selectByMouse: true
