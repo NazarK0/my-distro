@@ -553,11 +553,11 @@ Column {
         }
     }
 
-    // SessionButton {
-    //     id: sessionSelect
-    //     textConstantSession: textConstants.session
-    //     loginButtonWidth: loginButton.background.width
-    // }
+    SessionButton {
+        id: sessionSelect
+        textConstantSession: textConstants.session
+        loginButtonWidth: loginButton.background.width
+    }
 
     Connections {
         target: sddm
