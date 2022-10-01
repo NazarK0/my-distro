@@ -184,7 +184,7 @@ Column {
             font.pointSize: root.font.pointSize
             font.capitalization: config.AllowBadUsernames == "false" ? Font.Capitalize : Font.MixedCase
             anchors.centerIn: parent
-            height: font.pointSize * 2.7
+            height: font.pointSize * 3.1
             width: parent.width
             placeholderText: config.TranslatePlaceholderUsername || textConstants.userName
             selectByMouse: true
