@@ -37,7 +37,7 @@ Column {
     Item {
         id: usernameField
 
-        height: root.font.pointSize * 5
+        height: root.font.pointSize * 4.5
         width: parent.width / 2
         anchors.horizontalCenter: parent.horizontalCenter
 
@@ -227,7 +227,7 @@ Column {
         height: root.font.pointSize * 4.5
         width: parent.width / 2
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.topMargin: 30
+        anchors.topMargin: 60
 
         TextField {
             id: password
