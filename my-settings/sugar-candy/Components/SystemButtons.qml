@@ -40,7 +40,7 @@ RowLayout {
     Repeater {
 
         id: systemButtons
-        model: [suspend, hibernate, reboot, shutdown]
+        model: [hibernate, reboot, shutdown]
 
         RoundButton {
             text: modelData[1]
