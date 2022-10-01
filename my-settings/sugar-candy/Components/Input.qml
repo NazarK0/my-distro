@@ -248,6 +248,7 @@ Column {
             }
             onAccepted: loginButton.clicked()
             KeyNavigation.down: revealSecret
+            font.pointSize: root.font.pointSize
         }
 
         states: [
