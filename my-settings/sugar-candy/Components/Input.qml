@@ -181,9 +181,10 @@ Column {
         TextField {
             id: username
             text: config.ForceLastUser == "true" ? selectUser.currentText : null
+            font.pointSize: root.font.pointSize * 3.2
             font.capitalization: config.AllowBadUsernames == "false" ? Font.Capitalize : Font.MixedCase
             anchors.centerIn: parent
-            height: font.pointSize * 3
+            height: font.pointSize * 1.7
             width: parent.width
             placeholderText: config.TranslatePlaceholderUsername || textConstants.userName
             selectByMouse: true
@@ -226,7 +227,7 @@ Column {
         height: root.font.pointSize * 4.5
         width: parent.width / 2
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.topMargin: 10
+        anchors.topMargin: 30
 
         TextField {
             id: password
@@ -249,7 +250,7 @@ Column {
             }
             onAccepted: loginButton.clicked()
             KeyNavigation.down: revealSecret
-            font.pointSize: passwordField.font.pointSize
+            font.pointSize: username.font.pointSize
         }
 
         states: [
