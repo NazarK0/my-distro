@@ -28,8 +28,9 @@ import QtGraphicalEffects 1.0
 
 Item {
     id: sessionButton
-    height: 0
-    width: 0
+    visible: false
+    height: root.font.pointSize
+    width: parent.width / 2
     anchors.horizontalCenter: parent.horizontalCenter
 
     property var selectedSession: selectSession.currentIndex
