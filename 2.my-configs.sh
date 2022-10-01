@@ -11,3 +11,4 @@ cp -R config/* $HOME/.config/
 # load theme for sddm
 sudo mkdir -p /usr/share/sddm/themes
 sudo tar ‑xzf sugar‑candy.tar.gz ‑C /usr/share/sddm/themes
+cp my-settings/sddm.conf /etc/sddm.conf 
