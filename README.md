@@ -18,7 +18,6 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * [tint2](https://github.com/o9000/tint2) - a simple panel/taskbar made for modern X window managers
 * [bspwm](https://github.com/baskerville/bspwm) - a tiling window manager that represents windows as the leaves of a full binary tree
 * zip, unzip - for archive processing
-* [lxappearance](https://packages.debian.org/en/sid/lxappearance) - GTK+ theme switcher
 * [kitty](https://sw.kovidgoyal.net/kitty) - The fast, feature-rich, GPU based terminal emulator
 
 ### Fonts
@@ -33,13 +32,45 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 ### Icons
 * [icons8](https://icons8.com)
 
+### Apps
+* Google Chrome
+* Firefox
+* Docker
+* Github CLI
+* nvm (Node Js)
+* Rust
+* Dbeaver
+* VS Code
+* Intellij IDEA
+* VMPware Player
+* Anydesk
+* Signal
+* Libre Office
+* FoxitReader
+* Filezilla
+* Transmission
+* Gimp
+* Kcalc
+* Audacity
+
 ## Install steps
 
 1. Run as ROOT, enter root login and password
 ```
 apt install git
-cd /usr
+mkdir /distro-src
+cd /distro-src
 git clone https://github.com/Nazark0/my-distro.git
 cd my-distro
 ./1.core-setup.sh
+```
+2. Reboot your system. By this moment you will have bare minimum distro. If you want copy my settings and apps, run 2nd and 3rd script.
+3. Login into system by your account and do next:
+```
+cd /distro-src/my-distro
+./2.cofigs-setup.sh
+```
+4. When done, run last script:
+```
+./3.install-apps.sh
 ```

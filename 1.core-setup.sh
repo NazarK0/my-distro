@@ -60,8 +60,25 @@ fc-cache -vf
 apt install -y kitty
 
 # user setup operations
+mkdir /home/$username/images
+mkdir /home/$username/audio
+mkdir /home/$username/desktop
+mkdir /home/$username/downloads
+mkdir /home/$username/documents
+mkdir /home/$username/projects
+mkdir /home/$username/programs
+mkdir /home/$username/virtualMachines
+mkdir /home/$username/shared
+
 /usr/sbin/usermod -aG sudo $username
+
 chmod -R 770 /mydistro
 chown -R :users /mydistro
+
 /usr/sbin/usermod -aG users $username
-chown -R $username:users /home/$username
+
+chmod -R 700 /home/$username
+chown -R $username:$username /home/$username
+
+chmod -R 770 /home/$username/shared
+chown -R $username:users /home/$username/shared
