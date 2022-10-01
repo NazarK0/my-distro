@@ -31,7 +31,7 @@ Column {
     id: inputContainer
     Layout.fillWidth: true
 
-    // property Control exposeSession: 'sddm'
+    property Control exposeSession: sessionSelect.exposeSession
     property bool failed
 
     Item {
@@ -230,7 +230,7 @@ Column {
         TextField {
             id: password
             anchors.centerIn: parent
-            height: font.pointSize * 3
+            height: passwordField.height
             width: parent.width
             focus: config.ForcePasswordFocus == "true" ? true : false
             selectByMouse: true
@@ -248,7 +248,7 @@ Column {
             }
             onAccepted: loginButton.clicked()
             KeyNavigation.down: revealSecret
-            font.pointSize: root.font.pointSize
+            font.pointSize: passwordField.font.pointSize
         }
 
         states: [
@@ -549,7 +549,7 @@ Column {
             onClicked: config.AllowBadUsernames == "false" ? sddm.login(username.text.toLowerCase(), password.text, sessionSelect.selectedSession) : sddm.login(username.text, password.text, sessionSelect.selectedSession)
             Keys.onReturnPressed: clicked()
             Keys.onEnterPressed: clicked()
-            KeyNavigation.down: systemButtons
+            KeyNavigation.down: sessionSelect.exposeSession
         }
     }
 
