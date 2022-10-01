@@ -31,7 +31,7 @@ Column {
     id: inputContainer
     Layout.fillWidth: true
 
-    property Control exposeSession: sessionSelect.exposeSession
+    // property Control exposeSession: 'sddm'
     property bool failed
 
     Item {
@@ -549,7 +549,7 @@ Column {
             onClicked: config.AllowBadUsernames == "false" ? sddm.login(username.text.toLowerCase(), password.text, sessionSelect.selectedSession) : sddm.login(username.text, password.text, sessionSelect.selectedSession)
             Keys.onReturnPressed: clicked()
             Keys.onEnterPressed: clicked()
-            KeyNavigation.down: sessionSelect.exposeSession
+            KeyNavigation.down: systemButtons
         }
     }
 
