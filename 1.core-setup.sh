@@ -37,9 +37,9 @@ cd $repodir
 echo 'install ncpamixer build dependencies...'
 apt install build-essential gcc libssl-dev libncurses-dev libpulse-dev -y >> $logfile 2>&1
 echo 'install cmake...'
-wget -P $downloaddir/cmake https://github.com/Kitware/CMake/releases/download/v3.21.0/cmake-3.21.0.tar.gz >> $logfile 2>&1
-tar xvf $downloaddir/cmake/cmake-3.21.0.tar.gz  ‑C $downloaddir/cmake
-cd $downloaddir/cmake/cmake-3.21.0 
+wget -P $downloaddir https://github.com/Kitware/CMake/releases/download/v3.21.0/cmake-3.21.0.tar.gz >> $logfile 2>&1
+tar xvf $downloaddir/cmake-3.21.0.tar.gz ‑C $downloaddir
+cd $downloaddir/cmake-3.21.0 
 ./bootstrap >> $logfile 2>&1
 gmake >> $logfile 2>&1
 make install >> $logfile 2>&1
