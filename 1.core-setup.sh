@@ -37,7 +37,7 @@ cd $repodir
 echo 'install ncpamixer build dependencies...'
 apt install build-essential gcc libssl-dev libncurses-dev libpulse-dev -y >> $logfile 2>&1
 echo 'install cmake...'
-wget https://github.com/Kitware/CMake/releases/download/v3.21.0/cmake-3.21.0.tar.gz $downloaddir/cmake >> $logfile 2>&1
+wget -P $downloaddir/cmake https://github.com/Kitware/CMake/releases/download/v3.21.0/cmake-3.21.0.tar.gz >> $logfile 2>&1
 tar xvf $downloaddir/cmake/cmake-3.21.0.tar.gz  ‑C $downloaddir/cmake >> $logfile 2>&1
 cd $downloaddir/cmake/cmake-3.21.0 
 ./bootstrap >> $logfile 2>&1
@@ -55,7 +55,7 @@ echo 'install fonts...'
 apt install -y fonts-noto-color-emoji fonts-firacode fonts-font-awesome fonts-powerline >> $logfile 2>&1
 cp ./fonts/* /usr/share/fonts
 
-wget https://github.com/ryanoasis/nerd-fonts/archive/refs/tags/v2.2.2.zip $downloaddir/nerd-fonts  >> $logfile 2>&1
+wget -P $downloaddir/nerd-fonts https://github.com/ryanoasis/nerd-fonts/archive/refs/tags/v2.2.2.zip >> $logfile 2>&1
 unzip $downloaddir/nerd-fonts/v2.2.2.zip -d /usr/share/fonts
 
 fc-cache -vf >> $logfile 2>&1
