@@ -78,15 +78,15 @@ cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' \
 | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
 
-# Libre Office
-flatpak install -y --noninteractive flathub org.libreoffice.LibreOffice
-
 # PDF reader
-wget -P $downloaddir http://cdn01.foxitsoftware.com/pub/foxit/reader/desktop/linux/2.x/2.4/en_us/FoxitReader.enu.setup.2.4.4.0911.x64.run.tar.gz
-tar -xzf FoxitReader*.tar.gz --directory FoxitReader
-cd FoxitReader
+wget http://cdn01.foxitsoftware.com/pub/foxit/reader/desktop/linux/2.x/2.4/en_us/FoxitReader.enu.setup.2.4.4.0911.x64.run.tar.gz
+tar -xzf FoxitReader*.tar.gz
 sudo chmod a+x FoxitReader*.run
 sudo ./FoxitReader*.run
+
+
+# Libre Office
+flatpak install -y --noninteractive flathub org.libreoffice.LibreOffice
 
 sudo apt update
 
