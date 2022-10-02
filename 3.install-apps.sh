@@ -52,7 +52,8 @@ echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.
 
 # IntelliJ IDEA
 wget https://download.jetbrains.com/idea/ideaIC-2021.2.1.tar.gz
-tar -zxf ideaIC-*.tar.gz ‑C IntellijIDEA
+mkdir $downloaddir/IntellijIDEA
+tar -zxf ideaIC-*.tar.gz --directory $downloaddir/IntellijIDEA
 sudo mkdir /opt/idea/
 sudo chmod 777 /opt/idea/
 cd IntellijIDEA
