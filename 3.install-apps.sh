@@ -1,57 +1,57 @@
 #!/bin/bash
 
 downloaddir=/distro-src/download
+logfile=/distro-src/distro-install.log
 
 # install utilities
-sudo apt install -y curl ca-certificates gpg gnupg gnupg2 lsb-release software-properties-common apt-transport-https build-essential linux-headers-$(uname -r)
-sudo apt install -y default-jdk
+sudo apt install -y curl ca-certificates gpg gnupg gnupg2 lsb-release software-properties-common apt-transport-https build-essential linux-headers-$(uname -r) >> $logfile 2>&1
+sudo apt install -y default-jdk >> $logfile 2>&1
 
-sudo apt install flatpak
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo apt install -y flatpak >> $logfile 2>&1
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo >> $logfile 2>&1
 
 sudo mkdir -p /etc/apt/keyrings
 
 cd $downloaddir
 
 # Docker
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg >> $logfile 2>&1
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # Github CLI
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg >> $logfile 2>&1 \
 && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
 && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
 | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 
 # Google Chrome
-wget -qO - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/googlechrome-linux-keyring.gpg
+wget -qO - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/googlechrome-linux-keyring.gpg >> $logfile 2>&1
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/googlechrome-linux-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main" \
 | sudo tee /etc/apt/sources.list.d/google-chrome.list > /dev/null
 
 # nvm (Node Js)
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh >> $logfile 2>&1 | bash 
 source ~/.bashrc
 
 nvm install node --lts 
 nvm install node 
 
 # Rust
-curl https://sh.rustup.rs -sSf | sh
+curl https://sh.rustup.rs -sSf >> $logfile 2>&1 | sh
 source $HOME/.cargo/env
 
 # Dbeaver
 echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list > /dev/null
-curl -fsSL https://dbeaver.io/debs/dbeaver.gpg.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/dbeaver.gpg
+curl -fsSL https://dbeaver.io/debs/dbeaver.gpg.key >> $logfile 2>&1 | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/dbeaver.gpg
 
 # VS Code
-sudo apt install software-properties-common apt-transport-https wget -y
-wget -O- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg
+wget -O- https://packages.microsoft.com/keys/microsoft.asc >> $logfile 2>&1 | sudo gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg
 echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/vscode stable main | sudo tee /etc/apt/sources.list.d/vscode.list
 
 # IntelliJ IDEA
-wget https://download.jetbrains.com/idea/ideaIC-2021.2.1.tar.gz
+wget https://download.jetbrains.com/idea/ideaIC-2021.2.1.tar.gz >> $logfile 2>&1
 tar -zxf ideaIC-*.tar.gz ‑C IntellijIDEA
 sudo mkdir /opt/idea/
 sudo chmod 777 /opt/idea/
@@ -62,35 +62,35 @@ sh idea.sh
 cd $downloaddir
 
 # VMware Player
-wget https://www.vmware.com/go/getplayer-linux $downloaddir/VMwarePlayer
+wget https://www.vmware.com/go/getplayer-linux $downloaddir/VMwarePlayer >> $logfile 2>&1
 cd VMwarePlayer
 chmod +x VMware-Player-Full-*.bundle
 sudo ./VMware-Player-Full-*.bundle
 cd ..
 
 # Anydesk
-wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
+wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY >> $logfile 2>&1 | sudo apt-key add -
 echo "deb http://deb.anydesk.com/ all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
 
 # Signal
-wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+wget -O- https://updates.signal.org/desktop/apt/keys.asc >> $logfile 2>&1 | gpg --dearmor > signal-desktop-keyring.gpg
 cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' \
 | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
 
 # Libre Office
-flatpak install flathub org.libreoffice.LibreOffice
+flatpak install flathub org.libreoffice.LibreOffice >> $logfile 2>&1
 
 # PDF reader
-wget http://cdn01.foxitsoftware.com/pub/foxit/reader/desktop/linux/2.x/2.4/en_us/FoxitReader.enu.setup.2.4.4.0911.x64.run.tar.gz
+wget http://cdn01.foxitsoftware.com/pub/foxit/reader/desktop/linux/2.x/2.4/en_us/FoxitReader.enu.setup.2.4.4.0911.x64.run.tar.gz >> $logfile 2>&1
 tar -xzf FoxitReader*.tar.gz ‑C FoxitReader
 cd FoxitReader
 sudo chmod a+x FoxitReader*.run
 sudo ./FoxitReader*.run
 
-sudo apt update
+sudo apt update >> $logfile 2>&1
 
 sudo apt install -y google-chrome-stable docker-ce docker-ce-cli containerd.io docker-compose-plugin gh dbeaver-ce code anydesk signal-desktop \
-  firefox-esr filezilla transmission-cli transmission gimp kcalc audacity
+  firefox-esr filezilla transmission-cli transmission gimp kcalc audacity >> $logfile 2>&1
 
 cd $HOME
