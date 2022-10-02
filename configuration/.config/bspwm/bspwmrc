@@ -5,7 +5,7 @@
 
 #Start tint2 bar first
 tint2 &
-feh --bg-fill -Z --randomize ~/.config/.wallapappers/* &
+feh --bg-fill -Z --randomize ~/.config/wallapappers/* &
 picom --config "$HOME/.config/bspwm/picom.conf" &
 
 # Variable Defines

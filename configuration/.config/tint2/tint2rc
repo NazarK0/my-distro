@@ -84,7 +84,7 @@ systray_name_filter =
 #-------------------------------------
 # Executor
 execp = new
-execp_command = echo $HOME/.config/.icons/debian_logo.svg;
+execp_command = echo $HOME/.config/icons/debian_logo.svg;
 execp_has_icon = 1
 execp_icon_h = 30
 execp_icon_w = 30
@@ -97,7 +97,7 @@ execp_background_id = 2
 
 # desktops 1-10
 execp = new
-execp_command = echo $HOME/.config/.icons/32/icons8-siba-inu-kawaii.svg;
+execp_command = echo $HOME/.config/icons/32/icons8-siba-inu-kawaii.svg;
 execp_has_icon = 1
 execp_icon_h = 26
 execp_interval = 0
@@ -106,7 +106,7 @@ execp_lclick_command = bspc desktop -f 1
 #execp_monitor = all
 
 execp = new
-execp_command = echo $HOME/.config/.icons/32/icons8-desura.svg;
+execp_command = echo $HOME/.config/icons/32/icons8-desura.svg;
 execp_has_icon = 1
 execp_icon_h = 26
 execp_interval = 0
@@ -115,7 +115,7 @@ execp_lclick_command = bspc desktop -f 2
 # execp_monitor = all
 
 execp = new
-execp_command = echo $HOME/.config/.icons/32/icons8-nuke.svg;
+execp_command = echo $HOME/.config/icons/32/icons8-nuke.svg;
 execp_has_icon = 1
 execp_icon_h = 26
 execp_interval = 0
@@ -124,7 +124,7 @@ execp_lclick_command = bspc desktop -f 3
 # execp_monitor = all # from 17.0
 
 execp = new
-execp_command = echo $HOME/.config/.icons/32/icons8-raspberry-pi.svg;
+execp_command = echo $HOME/.config/icons/32/icons8-raspberry-pi.svg;
 execp_has_icon = 1
 execp_icon_h = 26
 execp_interval = 0
@@ -133,7 +133,7 @@ execp_lclick_command = bspc desktop -f 4
 # execp_monitor = all # from 17.0
 
 execp = new
-execp_command = echo $HOME/.config/.icons/32/icons8-starbucks.svg;
+execp_command = echo $HOME/.config/icons/32/icons8-starbucks.svg;
 execp_has_icon = 1
 execp_icon_h = 26
 execp_interval = 0
@@ -142,7 +142,7 @@ execp_lclick_command = bspc desktop -f 5
 # execp_monitor = all # from 17.0
 
 execp = new
-execp_command = echo $HOME/.config/.icons/32/icons8-mitsubishi.svg;
+execp_command = echo $HOME/.config/icons/32/icons8-mitsubishi.svg;
 execp_has_icon = 1
 execp_icon_h = 26
 execp_interval = 0
@@ -151,7 +151,7 @@ execp_lclick_command = bspc desktop -f 6
 # execp_monitor = all # from 17.0
 
 execp = new
-execp_command = echo $HOME/.config/.icons/32/icons8-git.svg;
+execp_command = echo $HOME/.config/icons/32/icons8-git.svg;
 execp_has_icon = 1
 execp_icon_h = 26
 execp_interval = 0
@@ -160,7 +160,7 @@ execp_lclick_command = bspc desktop -f 7
 # execp_monitor = all # from 17.0
 
 execp = new
-execp_command = echo $HOME/.config/.icons/32/icons8-golang.svg;
+execp_command = echo $HOME/.config/icons/32/icons8-golang.svg;
 execp_has_icon = 1
 execp_icon_h = 26
 execp_interval = 0
@@ -169,7 +169,7 @@ execp_lclick_command = bspc desktop -f 8
 # execp_monitor = all # from 17.0
 
 execp = new
-execp_command = echo $HOME/.config/.icons/32/icons8-razer.svg;
+execp_command = echo $HOME/.config/icons/32/icons8-razer.svg;
 execp_has_icon = 1
 execp_icon_h = 26
 execp_interval = 0
@@ -178,7 +178,7 @@ execp_lclick_command = bspc desktop -f 9
 # execp_monitor = all # from 17.0
 
 execp = new
-execp_command = echo $HOME/.config/.icons/32/icons8-hotstar.svg;
+execp_command = echo $HOME/.config/icons/32/icons8-hotstar.svg;
 execp_has_icon = 1
 execp_icon_h = 26
 execp_interval = 0
