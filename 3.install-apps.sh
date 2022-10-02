@@ -51,9 +51,10 @@ wget -O- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor 
 echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/vscode stable main | sudo tee /etc/apt/sources.list.d/vscode.list
 
 # IntelliJ IDEA
-wget https://download.jetbrains.com/idea/ideaIC-2021.2.1.tar.gz
+wget -O idea.tar.gz https://download.jetbrains.com/idea/ideaIC-2021.2.1.tar.gz
 sudo mkdir /opt/idea/
-sudo tar -zxf ideaIC-*.tar.gz -C /opt/idea/
+sudo tar -zxf idea.tar.gz
+mv idea/* /opt/idea/
 sudo chmod 777 /opt/idea/
 cd /opt/idea/bin/
 sh idea.sh
