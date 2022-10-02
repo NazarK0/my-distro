@@ -20,7 +20,7 @@ echo 'Install core packages...'
 apt install sudo sddm bspwm pulseaudio feh psmisc picom sxhkd -y >> $logfile 2>&1
 apt install tint2 zip unzip x11-xserver-utils -y >> $logfile 2>&1
 #dependencies for sddm theme 
-apt install libqt5svg5 qml‑module‑qtquick‑layouts qml-module-qtquick-controls qml-module-qtquick-controls2 qml‑module‑qtgraphicaleffects -y >> $logfile 2>&1
+apt install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y >> $logfile 2>&1
 
 systemctl enable sddm >> $logfile 2>&1
 systemctl set-default graphical.target
@@ -52,7 +52,7 @@ make USE_WIDE=True >> $logfile 2>&1
 cd $repodir
 
 echo 'install fonts...'
-apt install -y fonts-noto-color-emoji fonts-firacode fonts-font-awesome fonts-powerline >> $logfile 2>&1
+apt install -y fonts-noto-color-emoji fonts-firacode fonts-font-awesome fonts-powerline ttf-mscorefonts-installer >> $logfile 2>&1
 cp ./fonts/* /usr/share/fonts
 
 wget -P $downloaddir/nerd-fonts https://github.com/ryanoasis/nerd-fonts/archive/refs/tags/v2.2.2.zip >> $logfile 2>&1

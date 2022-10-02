@@ -28,6 +28,7 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases/)
 * emoji font
 * fonts from powerline
+* ttf MS core fonts
 
 ### Icons
 * [icons8](https://icons8.com)

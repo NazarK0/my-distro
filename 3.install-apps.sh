@@ -3,7 +3,7 @@
 downloaddir=/distro-src/download
 
 # install utilities
-apt install -y curl ca-certificates gpg gnupg gnupg2 lsb-release software-properties-common apt-transport-https build-essential linux-headers-$(uname -r)
+sudo apt install -y curl ca-certificates gpg gnupg gnupg2 lsb-release software-properties-common apt-transport-https build-essential linux-headers-$(uname -r)
 sudo apt install -y default-jdk
 
 sudo apt install flatpak
