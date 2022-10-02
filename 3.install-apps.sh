@@ -79,11 +79,11 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
 
 # Libre Office
-flatpak install flathub org.libreoffice.LibreOffice >> $logfile 2>&1
+flatpak install -y --noninteractive flathub org.libreoffice.LibreOffice >> $logfile 2>&1
 
 # PDF reader
 wget http://cdn01.foxitsoftware.com/pub/foxit/reader/desktop/linux/2.x/2.4/en_us/FoxitReader.enu.setup.2.4.4.0911.x64.run.tar.gz >> $logfile 2>&1
-tar -xzf FoxitReader*.tar.gz ‑C FoxitReader
+tar -xzf FoxitReader*.tar.gz --directory FoxitReader
 cd FoxitReader
 sudo chmod a+x FoxitReader*.run
 sudo ./FoxitReader*.run
