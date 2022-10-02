@@ -43,7 +43,6 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * Dbeaver
 * VS Code
 * Intellij IDEA
-* VMPware Player
 * Anydesk
 * Signal
 * Libre Office

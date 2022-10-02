@@ -43,7 +43,7 @@ curl https://sh.rustup.rs -sSf | sh
 source $HOME/.cargo/env
 
 # Dbeaver
-echo "deb https://dbeaver.io/debs/dbeaver-ce/" | sudo tee /etc/apt/sources.list.d/dbeaver.list > /dev/null
+echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
 curl -fsSL https://dbeaver.io/debs/dbeaver.gpg.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/dbeaver.gpg
 
 # VS Code
@@ -52,21 +52,11 @@ echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.
 
 # IntelliJ IDEA
 wget https://download.jetbrains.com/idea/ideaIC-2021.2.1.tar.gz
-mkdir $downloaddir/IntellijIDEA
-tar -zxf ideaIC-*.tar.gz --directory $downloaddir/IntellijIDEA
 sudo mkdir /opt/idea/
+sudo tar -zxf ideaIC-*.tar.gz -C /opt/idea/
 sudo chmod 777 /opt/idea/
-cd IntellijIDEA
-mv idea-*/* /opt/idea/
 cd /opt/idea/bin/
 sh idea.sh
-cd $downloaddir
-
-# VMware Player
-wget -P $downloaddir https://www.vmware.com/go/getplayer-linux 
-cd VMwarePlayer
-chmod +x VMware-Player-Full-*.bundle
-sudo ./VMware-Player-Full-*.bundle
 cd $downloaddir
 
 # Anydesk
