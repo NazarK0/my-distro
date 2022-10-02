@@ -43,7 +43,6 @@ source $HOME/.cargo/env
 
 # Dbeaver
 echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list > /dev/null
-sudo apt install curl gpg gnupg2 software-properties-common apt-transport-https ca-certificates
 curl -fsSL https://dbeaver.io/debs/dbeaver.gpg.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/dbeaver.gpg
 
 # VS Code
