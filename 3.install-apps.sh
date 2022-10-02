@@ -53,7 +53,7 @@ echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.
 
 # IntelliJ IDEA
 wget https://download.jetbrains.com/idea/ideaIC-2021.2.1.tar.gz
-tar -zxvf ideaIC-*.tar.gz ‑C IntellijIDEA
+tar -zxf ideaIC-*.tar.gz ‑C IntellijIDEA
 sudo mkdir /opt/idea/
 sudo chmod 777 /opt/idea/
 cd IntellijIDEA
@@ -84,7 +84,7 @@ flatpak install flathub org.libreoffice.LibreOffice
 
 # PDF reader
 wget http://cdn01.foxitsoftware.com/pub/foxit/reader/desktop/linux/2.x/2.4/en_us/FoxitReader.enu.setup.2.4.4.0911.x64.run.tar.gz
-tar xzvf FoxitReader*.tar.gz ‑C FoxitReader
+tar -xzf FoxitReader*.tar.gz ‑C FoxitReader
 cd FoxitReader
 sudo chmod a+x FoxitReader*.run
 sudo ./FoxitReader*.run
