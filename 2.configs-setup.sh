@@ -1,8 +1,6 @@
 #!/bin/bash
 
 mkdir -p $HOME/.config
-mkdir -p $HOME/.wallapappers
-mkdir -p $HOME/.icons
 
 cd configuration
 
