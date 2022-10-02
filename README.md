@@ -52,6 +52,7 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * Gimp
 * Kcalc
 * Audacity
+* Vlc
 
 ## Install steps
 
