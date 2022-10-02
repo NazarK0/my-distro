@@ -78,8 +78,8 @@ mkdir /home/$username/shared
 echo 'add user to sudoers'
 /usr/sbin/usermod -aG sudo $username
 
-chmod -R 770 /mydistro
-chown -R :users /mydistro
+chmod -R 770 /distro-src
+chown -R :users /distro-src
 
 /usr/sbin/usermod -aG users $username
 
@@ -90,6 +90,6 @@ chmod -R 770 /home/$username/shared
 chown -R $username:users /home/$username/shared
 
 echo 'change grub default background'
-mv configuration/grub-bg.jpg /usr/share/grub/grub-bg.jpg
+cp configuration/grub-bg.jpg /usr/share/grub/
 echo 'GRUB_BACKGROUND=/usr/share/grub/grub-bg.jpg' >> /etc/default/grub
 update-grub >> $logfile 2>&1
