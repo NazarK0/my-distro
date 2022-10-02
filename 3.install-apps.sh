@@ -62,11 +62,11 @@ sh idea.sh
 cd $downloaddir
 
 # VMware Player
-wget https://www.vmware.com/go/getplayer-linux $downloaddir/VMwarePlayer
+wget -P $downloaddir https://www.vmware.com/go/getplayer-linux 
 cd VMwarePlayer
 chmod +x VMware-Player-Full-*.bundle
 sudo ./VMware-Player-Full-*.bundle
-cd ..
+cd $downloaddir
 
 # Anydesk
 wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
@@ -82,7 +82,7 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 flatpak install -y --noninteractive flathub org.libreoffice.LibreOffice
 
 # PDF reader
-wget http://cdn01.foxitsoftware.com/pub/foxit/reader/desktop/linux/2.x/2.4/en_us/FoxitReader.enu.setup.2.4.4.0911.x64.run.tar.gz
+wget -P $downloaddir http://cdn01.foxitsoftware.com/pub/foxit/reader/desktop/linux/2.x/2.4/en_us/FoxitReader.enu.setup.2.4.4.0911.x64.run.tar.gz
 tar -xzf FoxitReader*.tar.gz --directory FoxitReader
 cd FoxitReader
 sudo chmod a+x FoxitReader*.run
