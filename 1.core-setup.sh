@@ -3,8 +3,8 @@
 mkdir -p /distro-src/download
 
 username=$(id -u -n 1000)
-downloaddir=/distro-src/download
-repodir=/distro-src/my-distro
+downloadDir=/distro-src/download
+repoDir=/distro-src/my-distro
 logfile=/distro-src/distro-install.log
 
 echo 'Add to apt all necessary repos'
@@ -17,46 +17,46 @@ echo 'Update packages list...'
 apt update >> $logfile 2>&1
 
 echo 'Install core packages...'
-apt install sudo sddm bspwm pulseaudio feh psmisc picom sxhkd -y >> $logfile 2>&1
-apt install tint2 zip unzip x11-xserver-utils -y >> $logfile 2>&1
-#dependencies for sddm theme 
-apt install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y >> $logfile 2>&1
 
-systemctl enable sddm >> $logfile 2>&1
+{
+  apt install sudo sddm bspwm polybar rofi pulseaudio feh psmisc picom sxhkd -y
+  apt install zip unzip x11-xserver-utils scrot dunst network-manager -y
+  #dependencies for sddm theme
+  apt install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
+} >> $logfile 2>&1
+
+{
+  systemctl enable sddm
+  systemctl enable NetworkManager
+} >> $logfile 2>&1
+
 systemctl set-default graphical.target
-
-echo 'install xmenu build dependencies...'
-apt install -y libimlib2-dev libx11-dev libxinerama-dev libxft-dev >> $logfile 2>&1
-echo 'install xmenu...'
-git clone https://github.com/phillbush/xmenu.git --depth=1 $downloaddir/xmenu >> $logfile 2>&1
-cd $downloaddir/xmenu
-make >> $logfile 2>&1
-make install >> $logfile 2>&1
-cd $repodir
 
 echo 'install ncpamixer build dependencies...'
 apt install build-essential gcc libssl-dev libncurses-dev libpulse-dev -y >> $logfile 2>&1
 echo 'install cmake...'
-wget -P $downloaddir https://github.com/Kitware/CMake/releases/download/v3.21.0/cmake-3.21.0.tar.gz >> $logfile 2>&1
-tar -zxf $downloaddir/cmake-*.tar.gz --directory $downloaddir
-cd $downloaddir/cmake-3.21.0 
-./bootstrap >> $logfile 2>&1
-gmake >> $logfile 2>&1
-make install >> $logfile 2>&1
-cd $repodir
+wget -P $downloadDir https://github.com/Kitware/CMake/releases/download/v3.21.0/cmake-3.21.0.tar.gz >> $logfile 2>&1
+tar -zxf $downloadDir/cmake-*.tar.gz --directory $downloadDir
+cd $downloadDir/cmake-3.21.0 || exit
+{
+  ./bootstrap
+  gmake
+  make
+} >> $logfile 2>&1
+cd $repoDir || exit
 
 echo 'install ncpamixer...'
-git clone https://github.com/fulhax/ncpamixer.git --depth=1 $downloaddir/ncpamixer >> $logfile 2>&1
-cd $downloaddir/ncpamixer
+git clone https://github.com/fulhax/ncpamixer.git --depth=1 $downloadDir/ncpamixer >> $logfile 2>&1
+cd $downloadDir/ncpamixer || exit
 make USE_WIDE=True >> $logfile 2>&1
-cd $repodir
+cd $repoDir || exit
 
 echo 'install fonts...'
 apt install -y fonts-noto-color-emoji fonts-firacode fonts-font-awesome fonts-powerline ttf-mscorefonts-installer >> $logfile 2>&1
 cp ./fonts/* /usr/share/fonts
 
-wget -P $downloaddir/nerd-fonts https://github.com/ryanoasis/nerd-fonts/archive/refs/tags/v2.2.2.zip >> $logfile 2>&1
-unzip $downloaddir/nerd-fonts/v2.2.2.zip -d /usr/share/fonts
+wget -P $downloadDir/nerd-fonts https://github.com/ryanoasis/nerd-fonts/archive/refs/tags/v2.2.2.zip >> $logfile 2>&1
+unzip $downloadDir/nerd-fonts/v2.2.2.zip -d /usr/share/fonts
 
 fc-cache -vf >> $logfile 2>&1
 
@@ -65,29 +65,29 @@ apt install -y kitty >> $logfile 2>&1
 
 # user setup operations
 echo 'update user home directory'
-mkdir /home/$username/images
-mkdir /home/$username/audio
-mkdir /home/$username/desktop
-mkdir /home/$username/downloads
-mkdir /home/$username/documents
-mkdir /home/$username/projects
-mkdir /home/$username/programs
-mkdir /home/$username/virtualMachines
-mkdir /home/$username/shared
+mkdir /home/"$username"/images
+mkdir /home/"$username"/audio
+mkdir /home/"$username"/desktop
+mkdir /home/"$username"/downloads
+mkdir /home/"$username"/documents
+mkdir /home/"$username"/projects
+mkdir /home/"$username"/programs
+mkdir /home/"$username"/virtualMachines
+mkdir /home/"$username"/shared
 
 echo 'add user to sudoers'
-/usr/sbin/usermod -aG sudo $username
+/usr/sbin/usermod -aG sudo "$username"
 
 chmod -R 770 /distro-src
 chown -R :users /distro-src
 
-/usr/sbin/usermod -aG users $username
+/usr/sbin/usermod -aG users "$username"
 
-chmod -R 700 /home/$username
-chown -R $username:$username /home/$username
+chmod -R 700 /home/"$username"
+chown -R "$username":"$username" /home/"$username"
 
-chmod -R 770 /home/$username/shared
-chown -R $username:users /home/$username/shared
+chmod -R 770 /home/"$username"/shared
+chown -R "$username":users /home/"$username"/shared
 
 echo 'change grub default background'
 cp configuration/grub-bg.jpg /usr/share/grub/

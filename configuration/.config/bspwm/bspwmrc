@@ -3,8 +3,8 @@
 #Clean lingering programs when reloaded
 "$HOME/.config/bspwm/clean" &
 
-#Start tint2 bar first
-tint2 &
+#Start polybar first
+bash ~/.config/polybar/launch.sh &
 feh --bg-fill -Z --randomize ~/.config/wallapapers/* &
 picom --config "$HOME/.config/bspwm/picom.conf" &
 
