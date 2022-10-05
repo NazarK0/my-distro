@@ -1,4 +1,4 @@
-# NazDI (Desktop Environment)
+# NazDE (Desktop Environment)
 My desktop environment based on Debian 11, inspired by [Chris Titus Tech](https://github.com/ChrisTitusTech/Debian-titus) repo
  
 ### Download Debian installer
