@@ -19,7 +19,7 @@ apt update >> $logfile 2>&1
 echo 'Install core packages...'
 
 {
-  apt install sudo sddm rofi bspwm pulseaudio feh psmisc picom sxhkd -y
+  apt install sudo sddm rofi bspwm pulseaudio feh psmisc picom sxhkd xscreensaver -y
   apt install zip unzip x11-xserver-utils scrot dunst network-manager -y
   apt -t bullseye-backports install -y polybar
   #dependencies for sddm theme

@@ -20,6 +20,7 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * [**scrot**](https://github.com/resurrecting-open-source-projects/scrot) - _command line screen capture utility_
 * [**dunst**](https://dunst-project.org/) - _a lightweight replacement for the notification daemons provided by most desktop environments_
 * [**network-manager**](https://networkmanager.dev/) - _network configuration tool suite_
+* [**xscreensaver**](https://www.jwz.org/xscreensaver/) - _the standard screen saver_
 
 ### Fonts
 * Fontawesome 4 Free
