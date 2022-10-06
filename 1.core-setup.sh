@@ -37,14 +37,14 @@ systemctl set-default graphical.target
 echo 'install ncpamixer build dependencies...'
 apt install build-essential gcc libssl-dev libncurses-dev libpulse-dev -y >> $logfile 2>&1
 echo 'install cmake...'
-wget -P $downloadDir https://github.com/Kitware/CMake/releases/download/v3.21.0/cmake-3.21.0.tar.gz >> $logfile 2>&1
+wget -P $downloadDir https://github.com/Kitware/CMake/releases/download/v3.24.2/cmake-3.24.2.tar.gz >> $logfile 2>&1
 mkdir $downloadDir/cmake-src
 tar -zxf $downloadDir/cmake-*.tar.gz --directory $downloadDir/cmake-src --strip-components 1
 cd $downloadDir/cmake-src || exit
 {
   ./bootstrap
-  gmake
   make
+  make install
 } >> $logfile 2>&1
 cd $repoDir || exit
 
