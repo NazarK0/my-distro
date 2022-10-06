@@ -19,7 +19,7 @@ apt update >> $logfile 2>&1
 echo 'Install core packages...'
 
 {
-  apt install sudo sddm bspwm rofi pulseaudio feh psmisc picom sxhkd -y
+  apt install sudo sddm rofi bspwm pulseaudio feh psmisc picom sxhkd -y
   apt install zip unzip x11-xserver-utils scrot dunst network-manager -y
   apt -t bullseye-backports install -y polybar
   #dependencies for sddm theme
@@ -37,8 +37,9 @@ echo 'install ncpamixer build dependencies...'
 apt install build-essential gcc libssl-dev libncurses-dev libpulse-dev -y >> $logfile 2>&1
 echo 'install cmake...'
 wget -P $downloadDir https://github.com/Kitware/CMake/releases/download/v3.21.0/cmake-3.21.0.tar.gz >> $logfile 2>&1
-tar -zxf $downloadDir/cmake-*.tar.gz --directory $downloadDir
-cd $downloadDir/cmake-3.21.0 || exit
+mkdir $downloadDir/cmake-src
+tar -zxf $downloadDir/cmake-*.tar.gz --directory $downloadDir/cmake-src --strip-components 1
+cd $downloadDir/cmake-src || exit
 {
   ./bootstrap
   gmake
