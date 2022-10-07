@@ -33,10 +33,6 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/googlechrome-linux-keyring.g
 
 # nvm (Node Js)
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
-source ~/.bashrc
-
-nvm install node --lts 
-nvm install node 
 
 # Rust
 curl https://sh.rustup.rs -sSf | sh
@@ -58,6 +54,7 @@ sudo tar -zxf idea.tar.gz --directory /opt/idea/ --strip-components 1
 sudo chmod 777 /opt/idea/
 cd /opt/idea/bin/
 sh idea.sh
+sudo cp configuration/IntellijIdea.desktop /usr/share/applications
 cd $downloaddir
 
 # Anydesk
@@ -83,6 +80,6 @@ flatpak install -y --noninteractive flathub org.libreoffice.LibreOffice
 sudo apt update
 
 sudo apt install -y google-chrome-stable docker-ce docker-ce-cli containerd.io docker-compose-plugin gh dbeaver-ce code anydesk signal-desktop \
-  firefox-esr filezilla transmission-cli transmission gimp kcalc audacity vlc gucharmap
+  firefox-esr filezilla transmission-cli transmission-gtk gimp kcalc audacity vlc gucharmap
 
 cd $HOME
