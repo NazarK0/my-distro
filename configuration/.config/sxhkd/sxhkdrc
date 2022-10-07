@@ -68,10 +68,6 @@ super + {t,alt + t,s,f}
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-# Change keyboard language
-alt + shift
-  {setxkbmap ua, setxkbmap us}
-
 #
 # focus/swap
 #
