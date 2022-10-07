@@ -52,6 +52,7 @@ echo 'install ncpamixer...'
 git clone https://github.com/fulhax/ncpamixer.git --depth=1 $downloadDir/ncpamixer >> $logfile 2>&1
 cd $downloadDir/ncpamixer || exit
 make USE_WIDE=True >> $logfile 2>&1
+make install
 cd $repoDir || exit
 
 echo 'install fonts...'
