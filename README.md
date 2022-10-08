@@ -22,7 +22,6 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * [**dunst**](https://dunst-project.org/) - _a lightweight replacement for the notification daemons provided by most desktop environments_
 * [**network-manager**](https://networkmanager.dev/) - _network configuration tool suite_
 * [**xscreensaver**](https://www.jwz.org/xscreensaver/) - _the standard screen saver_
-* [**gThumb**](https://github.com/GNOME/gthumb) - _An all-in-one image viewer with the ability to manage, edit and view the images_
 
 ### Tools
 * [**tree**](https://packages.debian.org/en/bullseye/tree) - _displays an indented directory tree, in color_
@@ -62,6 +61,7 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * **Audacity**
 * **Vlc**
 * **Gucharmap**
+* **gThumb**
 
 There installed [oh-my-zsh](https://ohmyz.sh/) and [powerlevel10k](https://github.com/romkatv/powerlevel10k). Also I installed some zsh plugins:
 * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
