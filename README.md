@@ -1,4 +1,4 @@
-# NazDE (Desktop Environment)
+# <center>NazDE (Desktop Environment)</center>
 My desktop environment based on Debian 11, inspired by [Chris Titus Tech](https://github.com/ChrisTitusTech/Debian-titus) repo
  
 ### Download Debian installer
@@ -17,10 +17,16 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * [**bspwm**](https://github.com/baskerville/bspwm) - _a tiling window manager that represents windows as the leaves of a full binary tree_
 * **zip, unzip** - _for archive processing_
 * [**kitty**](https://sw.kovidgoyal.net/kitty) - _the fast, feature-rich, GPU based terminal emulator_
+* [**zsh**](https://zsh.sourceforge.io/) - _a shell designed for interactive use_
 * [**scrot**](https://github.com/resurrecting-open-source-projects/scrot) - _command line screen capture utility_
 * [**dunst**](https://dunst-project.org/) - _a lightweight replacement for the notification daemons provided by most desktop environments_
 * [**network-manager**](https://networkmanager.dev/) - _network configuration tool suite_
 * [**xscreensaver**](https://www.jwz.org/xscreensaver/) - _the standard screen saver_
+* [**gThumb**](https://github.com/GNOME/gthumb) - _An all-in-one image viewer with the ability to manage, edit and view the images_
+
+### Tools
+* [**tree**](https://packages.debian.org/en/bullseye/tree) - _displays an indented directory tree, in color_
+* [**net-tools**](https://packages.debian.org/en/bullseye/net-tools) - _includes the important tools for controlling the network subsystem of the Linux kernel_
 
 ### Fonts
 * Fontawesome 4 Free
@@ -57,6 +63,11 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * **Vlc**
 * **Gucharmap**
 
+There installed [oh-my-zsh](https://ohmyz.sh/) and [powerlevel10k](https://github.com/romkatv/powerlevel10k). Also I installed some zsh plugins:
+* [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+* [web-search](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search)
+* [json-tools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools)
+
 ## Install steps
 
 1. Run as **root**, enter root login and password
@@ -74,7 +85,14 @@ cd /distro-src/my-distro \
 && ./2.cofigs-setup.sh
 ```
 3. Reboot your system.
-4. When done, run last script:
+4. When done, run last script as user:
 ```
 ./3.install-apps.sh
 ```
+5. After that edit .zshrc file and add installed plugins:
+```
+plugins=(<...> zsh-autosuggestions web-search jsontools)
+```
+<center>
+  <img src="desktop.png" alt="After installation preview" style="height: 500px;"/>
+</center>

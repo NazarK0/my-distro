@@ -80,6 +80,6 @@ flatpak install -y --noninteractive flathub org.libreoffice.LibreOffice
 sudo apt update
 
 sudo apt install -y google-chrome-stable docker-ce docker-ce-cli containerd.io docker-compose-plugin gh dbeaver-ce code anydesk signal-desktop \
-  firefox-esr filezilla transmission-cli transmission-gtk gimp kcalc audacity vlc gucharmap
+  firefox-esr filezilla transmission-cli transmission-gtk gimp kcalc audacity vlc gucharmap gthumb
 
 cd $HOME

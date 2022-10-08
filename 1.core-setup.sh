@@ -25,6 +25,8 @@ echo 'Install core packages...'
   apt -t bullseye-backports install -y polybar
   #dependencies for sddm theme
   apt install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
+  #tools
+  apt install net-tools tree
 } >> $logfile 2>&1
 
 {
@@ -65,7 +67,7 @@ unzip $downloadDir/nerd-fonts/v2.2.2.zip -d /usr/share/fonts
 fc-cache -vf >> $logfile 2>&1
 
 echo 'install terminal emulator...'
-apt install -y kitty >> $logfile 2>&1
+apt install -y kitty zsh >> $logfile 2>&1
 
 # user setup operations
 echo 'update user home directory'
