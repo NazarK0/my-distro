@@ -7,6 +7,7 @@
 bash ~/.config/polybar/launch.sh &
 feh --bg-fill -Z --randomize ~/.config/wallapapers/* &
 picom --config "$HOME/.config/bspwm/picom.conf" &
+xscreensaver &
 
 # keyboard layouts
 setxkbmap -option grp:alt_shift_toggle us,ua &
