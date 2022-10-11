@@ -25,6 +25,7 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * [**acpid**](https://packages.debian.org/en/sid/acpid) - _a completely flexible, totally extensible daemon for delivering ACPI events(Fn-keys, etc)_
 * [**playerctl**](https://man.archlinux.org/man/community/playerctl/playerctl.1.en) - _control media players via MPRIS_(used in Fn keys scripts)
 * [**amixer**](https://linux.die.net/man/1/amixer) - _command-line mixer for ALSA soundcard driver_(used in Fn keys scripts)
+* [**htop**](https://htop.dev/) - _a cross-platform interactive process viewer_
 
 ### Tools
 * [**tree**](https://packages.debian.org/en/bullseye/tree) - _displays an indented directory tree, in color_
