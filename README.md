@@ -41,9 +41,6 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * ttf MS core fonts
 * polybar custom font(<https://fontello.com/>)
 
-### Icons
-* [icons8](https://icons8.com)
-
 ### Apps
 * **Google Chrome**
 * **Firefox**
