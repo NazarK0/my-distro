@@ -19,9 +19,10 @@ apt update >> $logfile 2>&1
 echo 'Install core packages...'
 
 {
-  apt install sudo sddm rofi bspwm pulseaudio feh psmisc picom sxhkd -y
+  apt install sudo sddm rofi bspwm pulseaudio feh psmisc picom sxhkd acpid -y
   apt install zip unzip x11-xserver-utils scrot dunst network-manager -y
   apt install xscreensaver xscreensaver-data-extra xscreensaver-gl-extra rss-glx -y
+  apt install playerctl alsautils-y
   apt -t bullseye-backports install -y polybar
   #dependencies for sddm theme
   apt install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y

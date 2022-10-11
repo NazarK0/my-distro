@@ -22,6 +22,9 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * [**dunst**](https://dunst-project.org/) - _a lightweight replacement for the notification daemons provided by most desktop environments_
 * [**network-manager**](https://networkmanager.dev/) - _network configuration tool suite_
 * [**xscreensaver**](https://www.jwz.org/xscreensaver/) - _the standard screen saver_
+* [**acpid**](https://packages.debian.org/en/sid/acpid) - _a completely flexible, totally extensible daemon for delivering ACPI events(Fn-keys, etc)_
+* [**playerctl**](https://man.archlinux.org/man/community/playerctl/playerctl.1.en) - _control media players via MPRIS_(used in Fn keys scripts)
+* [**amixer**](https://linux.die.net/man/1/amixer) - _command-line mixer for ALSA soundcard driver_(used in Fn keys scripts)
 
 ### Tools
 * [**tree**](https://packages.debian.org/en/bullseye/tree) - _displays an indented directory tree, in color_
@@ -96,3 +99,7 @@ plugins=(<...> zsh-autosuggestions web-search jsontools)
 <center>
   <img src="desktop.png" alt="After installation preview" style="height: 500px;"/>
 </center>
+
+#### Extra Info
+[**ACPI events**](https://linuxconfig.org/how-to-handle-acpi-events-on-linux)
+[**x11-utils**](https://packages.debian.org/en/bullseye/x11-utils)

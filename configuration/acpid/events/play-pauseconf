@@ -1,0 +1,2 @@
+event=cd/play.*
+action=su -c "playerctl play-pause" $(id -u -n 1000)

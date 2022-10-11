@@ -10,6 +10,10 @@ cp .Xresources $HOME/
 cp .Xdefaults $HOME/
 cp -R .config/* $HOME/.config/
 
+
+# load Fn keybindings(acpid events)
+sudo cp -r acpid/* /etc/acpi/
+
 # load theme for sddm
 sudo mkdir -p /usr/share/sddm/themes
 sudo tar -xzf sugar-candy-patched.tar.gz --directory /usr/share/sddm/themes

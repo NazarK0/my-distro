@@ -1,0 +1,2 @@
+event=cd/next.*
+action=/bin/su -c "playerctl next" $(id -u -n 1000)
