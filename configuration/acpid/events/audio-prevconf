@@ -1,2 +1,2 @@
 event=cd/prev.*
-action=su -c "playerctl previous" $(id -u -n 1000)
+action=/etc/acpi/audio-prev.sh

@@ -1,2 +1,2 @@
 event=button/volumedown.*
-action=pactl amixer set Capture 5%%-
+action=/etc/acpi/volumedown.sh

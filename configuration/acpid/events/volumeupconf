@@ -1,2 +1,2 @@
 event=button/volumeup.*
-action=amixer set Capture 5%%+
+action=/etc/acpi/volumeup.sh
