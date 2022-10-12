@@ -74,6 +74,9 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * [web-search](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search)
 * [json-tools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools)
 
+
+[**Connect to internet from cli**](internet-connection.md)
+
 ## Install steps
 
 1. Run as **root**, enter root login and password
