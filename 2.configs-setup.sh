@@ -12,6 +12,7 @@ cp -R .config/* $HOME/.config/
 
 cp .dircolors $HOME/
 eval "$(dircolors $HOME/.dircolors)" 
+tree -C > /dev/null
 
 
 # load Fn keybindings(acpid events)
