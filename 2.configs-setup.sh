@@ -8,12 +8,10 @@ cd configuration
 
 cp .Xresources $HOME/
 cp .Xdefaults $HOME/
+cp .zshrc $HOME/
 cp -R .config/* $HOME/.config/
 
 cp .dircolors $HOME/
-eval "$(dircolors $HOME/.dircolors)" 
-tree -C > /dev/null
-
 
 # load Fn keybindings(acpid events)
 sudo cp -r acpid/* /etc/acpi/
@@ -36,5 +34,6 @@ sed -i "s#$pattern#ZSH_THEME=\"powerlevel10k/powerlevel10k\"#g" $HOME/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 wget -P $ZSH_CUSTOM/plugins/zsh-web-search https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/web-search/web-search.plugin.zsh $ZSH_CUSTOM/plugins/zsh-web-search
 wget -P $ZSH_CUSTOM/plugins/zsh-json-tools https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/jsontools/jsontools.plugin.zsh
+
 
 sudo reboot
