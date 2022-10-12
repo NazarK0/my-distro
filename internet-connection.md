@@ -41,7 +41,7 @@ ping 8.8.8.8
 ```
 Voila! Now you must be connected to internet and continue installation process. If you has any trouble return to previous steps and check commands.
 After all installation scripts done and you will have desktop environment, kill wpa_supplicant and configure network thru nmcli or any other way, 
-you will have all tools needed for network configuration installed.
+you will have all tools needed for network configuration installed 🥳.
 ```
 killall /sbin/wpa_supplicant
 ```
