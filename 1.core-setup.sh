@@ -27,7 +27,7 @@ echo 'Install core packages...'
   #dependencies for sddm theme
   apt install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
   #tools
-  apt install net-tools tree
+  apt install net-tools tree -y
 } >> $logfile 2>&1
 
 {
