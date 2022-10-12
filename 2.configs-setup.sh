@@ -10,6 +10,9 @@ cp .Xresources $HOME/
 cp .Xdefaults $HOME/
 cp -R .config/* $HOME/.config/
 
+cp .dircolors $HOME/
+eval "$(dircolors $HOME/.dircolors)" 
+
 
 # load Fn keybindings(acpid events)
 sudo cp -r acpid/* /etc/acpi/
