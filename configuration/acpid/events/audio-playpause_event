@@ -1,0 +1,2 @@
+event=cd/play.*
+action=/etc/acpi/audio-playpause.sh
