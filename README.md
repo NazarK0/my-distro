@@ -63,8 +63,13 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 * **Vlc**
 * **Gucharmap**
 * **gThumb**
+* **OBS Studio**
+### Themes
+* [oh-my-zsh](https://ohmyz.sh/)
+* [powerlevel10k](https://github.com/romkatv/powerlevel10k).
+* [ls colors](https://github.com/trapd00r/LS_COLORS)
 
-There installed [oh-my-zsh](https://ohmyz.sh/) and [powerlevel10k](https://github.com/romkatv/powerlevel10k). Also I installed some zsh plugins:
+### ZSH plugins:
 * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 * [web-search](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search)
 * [json-tools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools)
