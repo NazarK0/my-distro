@@ -11,7 +11,7 @@ pattern=$(grep ^ZSH_THEME="*" $HOME/.zshrc)
 sed -i "s#$pattern#ZSH_THEME=\"powerlevel10k/powerlevel10k\"#g" $HOME/.zshrc
 
 # make colorful ls
-echo 'eval "$(dircolors .dircolors)"' > test.txt
+echo 'eval "$(dircolors .dircolors)"' > $HOME/.zshrc
 
 #install zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
