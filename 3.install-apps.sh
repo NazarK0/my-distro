@@ -2,6 +2,19 @@
 
 downloaddir=/distro-src/download
 logfile=/distro-src/distro-install.log
+ZSH_CUSTOM=$oh_my_zsh/custom
+
+
+# configure zsh theme
+git clone https://github.com/romkatv/powerlevel10k.git --depth=1 $ZSH_CUSTOM/themes/powerlevel10k/ 
+pattern=$(grep ^ZSH_THEME="*" $HOME/.zshrc)
+sed -i "s#$pattern#ZSH_THEME=\"powerlevel10k/powerlevel10k\"#g" $HOME/.zshrc
+
+#install zsh plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+wget -P $ZSH_CUSTOM/plugins/zsh-web-search https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/web-search/web-search.plugin.zsh $ZSH_CUSTOM/plugins/zsh-web-search
+wget -P $ZSH_CUSTOM/plugins/zsh-json-tools https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/jsontools/jsontools.plugin.zsh
+
 
 # install utilities
 sudo apt install -y curl ca-certificates gpg gnupg gnupg2 lsb-release software-properties-common apt-transport-https build-essential linux-headers-$(uname -r)
