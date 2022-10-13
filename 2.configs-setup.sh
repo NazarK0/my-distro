@@ -11,7 +11,6 @@ cd configuration
 
 cp .Xresources $HOME/
 cp .Xdefaults $HOME/
-cp .zshrc $HOME/
 cp -R .config/* $HOME/.config/
 
 cp .dircolors $HOME/
@@ -27,7 +26,7 @@ sudo cp sddm.conf /etc/sddm.conf
 
 #configure zsh
 chsh -s /bin/zsh
-sh -c "$(wget -P $oh_my_zsh https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" --unattended
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" --unattended
 
 git clone https://github.com/romkatv/powerlevel10k.git --depth=1 $ZSH_CUSTOM/themes/powerlevel10k/ 
 pattern=$(grep ^ZSH_THEME="*" $HOME/.zshrc)
