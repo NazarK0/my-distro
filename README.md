@@ -30,6 +30,7 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/debian-cd/c
 ### Tools
 * [**tree**](https://packages.debian.org/en/bullseye/tree) - _displays an indented directory tree, in color_
 * [**net-tools**](https://packages.debian.org/en/bullseye/net-tools) - _includes the important tools for controlling the network subsystem of the Linux kernel_
+* [**fdisk**](https://packages.debian.org/en/bullseye/fdisk) - _collection of partitioning utilities_
 
 ### Fonts
 * Fontawesome 4 Free
