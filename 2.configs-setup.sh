@@ -1,8 +1,5 @@
 #!/bin/bash
 
-
-oh_my_zsh=$HOME/.oh-my-zsh
-
 mkdir -p $HOME/.config
 
 cd configuration
@@ -20,7 +17,6 @@ sudo cp -r acpid/* /etc/acpi/
 sudo mkdir -p /usr/share/sddm/themes
 sudo tar -xzf sugar-candy-patched.tar.gz --directory /usr/share/sddm/themes
 sudo cp sddm.conf /etc/sddm.conf 
-
 
 #configure zsh
 chsh -s /bin/zsh

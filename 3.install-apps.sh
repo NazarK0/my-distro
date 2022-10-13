@@ -2,13 +2,16 @@
 
 downloaddir=/distro-src/download
 logfile=/distro-src/distro-install.log
+oh_my_zsh=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$oh_my_zsh/custom
-
 
 # configure zsh theme
 git clone https://github.com/romkatv/powerlevel10k.git --depth=1 $ZSH_CUSTOM/themes/powerlevel10k/ 
 pattern=$(grep ^ZSH_THEME="*" $HOME/.zshrc)
 sed -i "s#$pattern#ZSH_THEME=\"powerlevel10k/powerlevel10k\"#g" $HOME/.zshrc
+
+# make colorful ls
+echo 'eval "$(dircolors .dircolors)"' > test.txt
 
 #install zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
@@ -64,12 +67,12 @@ echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.
 # IntelliJ IDEA
 wget -O idea.tar.gz https://download.jetbrains.com/idea/ideaIC-2021.2.1.tar.gz
 sudo mkdir /opt/idea/
-cat configuration/environment >> /etc/environment
+sudo cat configuration/environment >> /etc/environment
 sudo tar -zxf idea.tar.gz --directory /opt/idea/ --strip-components 1
 sudo chmod 777 /opt/idea/
 cd /opt/idea/bin/
 sh idea.sh
-sudo cp configuration/IntellijIdea.desktop /usr/share/applications
+sudo cp configuration/intellijIdea.desktop /usr/share/applications
 cd $downloaddir
 
 # Anydesk
