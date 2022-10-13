@@ -1,6 +1,8 @@
 #!/bin/bash
 
-ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+
+oh_my_zsh=$HOME/.oh-my-zsh
+ZSH_CUSTOM=$oh_my_zsh/custom
 
 mkdir -p $HOME/.config
 mkdir -p $ZSH_CUSTOM
@@ -25,7 +27,7 @@ sudo cp sddm.conf /etc/sddm.conf
 
 #configure zsh
 chsh -s /bin/zsh
-sh -c "$(wget -P $downloadDir https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" --unattended
+sh -c "$(wget -P $oh_my_zsh https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" --unattended
 
 git clone https://github.com/romkatv/powerlevel10k.git --depth=1 $ZSH_CUSTOM/themes/powerlevel10k/ 
 pattern=$(grep ^ZSH_THEME="*" $HOME/.zshrc)
