@@ -67,13 +67,13 @@ echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.
 # IntelliJ IDEA
 wget -O idea.tar.gz https://download.jetbrains.com/idea/ideaIC-2021.2.1.tar.gz
 sudo mkdir /opt/idea/
-sudo cat configuration/environment >> /etc/environment
+echo "Наступна операція вимагає паролю користувача root"
+su -c "cat configuration/environment >> /etc/environment" $(id -u -n 0)
 sudo tar -zxf idea.tar.gz --directory /opt/idea/ --strip-components 1
 sudo chmod 777 /opt/idea/
 cd /opt/idea/bin/
-sh idea.sh
-sudo cp configuration/intellijIdea.desktop /usr/share/applications
 cd $downloaddir
+sudo cp configuration/intellijIdea.desktop /usr/share/applications
 
 # Anydesk
 wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
