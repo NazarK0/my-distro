@@ -24,7 +24,7 @@ super + alt + b
 	firefox-esr
 
 super + p 
-	scrot %d.%m.%Y_screenshot.png -e 'mv $f ~/images/shots'
+	scrot ~/images/shots/%d.%m.%Y_screenshot_%s.png 
 
 super + v
 	code
@@ -53,9 +53,6 @@ super + y
 super + g
 	bspc node -s biggest.window
 
-#super + e
-#	thunar
-
 #
 # state/flags
 #
@@ -67,7 +64,6 @@ super + {t,alt + t,s,f}
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
-
 #
 # focus/swap
 #
@@ -84,13 +80,9 @@ super + {p,b,comma,period}
 super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
 
-# focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
-
-# focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
+# focus the next/previous desktop
+super + {_,alt} + Tab
+	bspc desktop -f {next,prev}.local
 
 # focus the older or newer node in the focus history
 super + {o,i}
@@ -137,11 +129,3 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-	
-# volume control
-XF86AudioLowerVolume
-	amixer set Master 5%-
-XF86AudioRaiseVolume
-	amixer set Master 5%+
-XF86AudioMute
-        amixer set Master toggle
