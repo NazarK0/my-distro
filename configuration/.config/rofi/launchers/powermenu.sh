@@ -8,7 +8,7 @@ rofi_command="rofi -theme $theme"
 # Options
 shutdown="Вимкнути"
 reboot="Перезавантажити"
-lock="Призупинити"
+lock="Заблокувати екран"
 suspend="Приспати"
 logout="Вийти"
 
@@ -23,17 +23,13 @@ options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 2)"
 case $chosen in
     $shutdown)
-			systemctl shutdown
+			systemctl poweroff
         ;;
     $reboot)
 			systemctl reboot
         ;;
     $lock)
-		if [[ -f /usr/bin/i3lock ]]; then
-			i3lock
-		elif [[ -f /usr/bin/betterlockscreen ]]; then
-			betterlockscreen -l
-		fi
+			xscreensaver-command -lock
         ;;
     $suspend)
 			mpc -q pause
