@@ -1,2 +1,0 @@
-event=cd/next.*
-action=/etc/acpi/audio-next.sh

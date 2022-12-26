@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Terminal=false
-Exec=/opt/idea/bin/idea.sh
-Name=Intellij Idea
-Comment=IDE
-Icon=/opt/idea/bin/idea.svg
-StartupNotify=true

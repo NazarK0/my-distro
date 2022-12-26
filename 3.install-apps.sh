@@ -1,7 +1,7 @@
 #!/bin/bash
 
-downloaddir=/distro-src/download
-logfile=/distro-src/distro-install.log
+downloaddir=$HOME/tmp
+logfile=/var/log/distro-install.log
 oh_my_zsh=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$oh_my_zsh/custom
 
@@ -11,7 +11,7 @@ pattern=$(grep ^ZSH_THEME="*" $HOME/.zshrc)
 sed -i "s#$pattern#ZSH_THEME=\"powerlevel10k/powerlevel10k\"#g" $HOME/.zshrc
 
 # make colorful ls
-echo 'eval "$(dircolors .dircolors)"' > $HOME/.zshrc
+echo 'eval "$(dircolors ~/.dircolors)"' > $HOME/.zshrc
 
 #install zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
@@ -85,19 +85,13 @@ cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' \
 | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
 
-# PDF reader
-wget http://cdn01.foxitsoftware.com/pub/foxit/reader/desktop/linux/2.x/2.4/en_us/FoxitReader.enu.setup.2.4.4.0911.x64.run.tar.gz
-tar -xzf FoxitReader*.tar.gz
-sudo chmod a+x FoxitReader*.run
-sudo ./FoxitReader*.run
-
-
 # Libre Office
 flatpak install -y --noninteractive flathub org.libreoffice.LibreOffice
+flatpak install -y flathub org.telegram.desktop
 
 sudo apt update
 
 sudo apt install -y google-chrome-stable docker-ce docker-ce-cli containerd.io docker-compose-plugin gh dbeaver-ce code anydesk signal-desktop \
-  firefox-esr filezilla transmission-cli transmission-gtk gimp kcalc audacity vlc gucharmap gthumb obs-studio
+  filezilla audacity vlc gucharmap obs-studio
 
 cd $HOME
